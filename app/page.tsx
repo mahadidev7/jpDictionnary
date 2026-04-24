@@ -23,6 +23,21 @@ export default function Home() {
     window.open(url, "_blank", "width=500,height=700");
   };
 
+  function shuffle() {
+    // Use the spread operator to avoid mutating the original array
+    const shuffled = [...lessonVocab];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      // Generate a random index between 0 and i
+      const j = Math.floor(Math.random() * (i + 1));
+
+      // Swap elements using destructuring assignment
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    setLessonVocab(shuffled);
+  }
+
   return (
     <>
       <div className="flex flex-wrap w-full p-2 gap-2">
@@ -82,30 +97,38 @@ export default function Home() {
           >
             jisho
           </button>
+          <button
+            className="bg-black p-2 text-white rounded"
+            onClick={() => shuffle()}
+          >
+            shuffle
+          </button>
         </div>
       </div>
 
       {isSlider ? (
         <>
           <div className="flex justify-center items-center w-full p-2">
-            <div className="border border-gray-300 rounded p-2 min-w-full">
-              <div className="mb-2 flex justify-center items-end">
-                <p className="text-center text-[30px] font-bold text-[#000000]">
+            <div className="border border-gray-300 rounded p-2 w-full">
+              <div className="mb-2 flex flex-col justify-end items-end">
+                <p className="text-[30px] font-bold text-[#000000]">
                   {lessonVocab[sliderActiveVocab]?.japanese}
                 </p>
-                <p className="text-center text-[16px] text-[#000000]">
+                <p className="text-[16px] text-[#000000]">
                   ( {lessonVocab[sliderActiveVocab]?.pronounce} )
                 </p>
               </div>
 
-              <p className="text-center text-lg text-[#000000]">
-                {lessonVocab[sliderActiveVocab]?.english}
-              </p>
-              <p className="text-center text-[14px] text-[#000000]">
-                {lessonVocab[sliderActiveVocab]?.bangle}
-              </p>
-              <p className="text-center text-[14px] text-[#000000]">
-                {lessonVocab[sliderActiveVocab]?.kanji}
+              <div className="flex flex-col justify-start items-start">
+                <p className="text-lg text-[#000000]">
+                  {lessonVocab[sliderActiveVocab]?.english || "---"}
+                </p>
+                <p className="text-[14px] text-[#000000]">
+                  {lessonVocab[sliderActiveVocab]?.bangle || "---"}
+                </p>
+              </div>
+              <p className="text-[14px] text-right text-[#000000]">
+                {lessonVocab[sliderActiveVocab]?.kanji || "---"}
               </p>
             </div>
           </div>

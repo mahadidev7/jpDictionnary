@@ -1,65 +1,169 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import { jpN5 } from "./data/jpN5";
+
+type VocabItem = {
+  japanese: string;
+  pronounce: string;
+  english: string;
+  bangle: string;
+  kanji: string;
+};
 
 export default function Home() {
+  const [lessonVocab, setLessonVocab] = useState<VocabItem[]>([]);
+  const [sliderActiveVocab, setSliderActiveVocab] = useState(0);
+  const [isSlider, setIsSlider] = useState(true);
+
+  const handleClick = (data: VocabItem[]) => {
+    setLessonVocab(data);
+  };
+
+  const handelPOPUPFun = (url: string) => {
+    window.open(url, "_blank", "width=500,height=700");
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      <div className="flex flex-wrap w-full p-2 gap-2">
+        {jpN5?.map((word, index) => (
+          <div key={index} className="">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => handleClick(word.lessonVocabList)}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <p className="text-lg font-bold">{word.lesson}</p>
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap w-full p-2 gap-2">
+        <button
+          className="bg-black p-2 text-white rounded"
+          onClick={() => setIsSlider(false)}
+        >
+          All
+        </button>
+        <button
+          className="bg-black p-2 text-white rounded"
+          onClick={() => setIsSlider(true)}
+        >
+          slider
+        </button>
+        <div className="flex flex-wrap gap-2 justify-end items-center">
+          <button
+            className="bg-black p-2 text-white rounded"
+            onClick={() =>
+              handelPOPUPFun(
+                `https://www.japandict.com/?s=${lessonVocab[sliderActiveVocab]?.japanese}&lang=eng`,
+              )
+            }
+          >
+            japandict
+          </button>
+          <button
+            className="bg-black p-2 text-white rounded"
+            onClick={() =>
+              handelPOPUPFun(
+                `https://takoboto.jp/?q=${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
+              )
+            }
+          >
+            takoboto
+          </button>
+          <button
+            className="bg-black p-2 text-white rounded"
+            onClick={() =>
+              handelPOPUPFun(
+                `https://jisho.org/search/${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
+              )
+            }
+          >
+            jisho
+          </button>
+        </div>
+      </div>
+
+      {isSlider ? (
+        <>
+          <div className="flex justify-center items-center w-full p-2">
+            <div className="border border-gray-300 rounded p-2 min-w-full">
+              <div className="mb-2 flex justify-center items-end">
+                <p className="text-center text-[30px] font-bold text-[#000000]">
+                  {lessonVocab[sliderActiveVocab]?.japanese}
+                </p>
+                <p className="text-center text-[16px] text-[#000000]">
+                  ( {lessonVocab[sliderActiveVocab]?.pronounce} )
+                </p>
+              </div>
+
+              <p className="text-center text-lg text-[#000000]">
+                {lessonVocab[sliderActiveVocab]?.english}
+              </p>
+              <p className="text-center text-[14px] text-[#000000]">
+                {lessonVocab[sliderActiveVocab]?.bangle}
+              </p>
+              <p className="text-center text-[14px] text-[#000000]">
+                {lessonVocab[sliderActiveVocab]?.kanji}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center items-center w-full p-2 mb-9 gap-3">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() =>
+                setSliderActiveVocab((prev) => Math.max(0, prev - 1))
+              }
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Previous
+            </button>
+            <p className="text-center text-[16px] text-[#000000]">
+              {sliderActiveVocab + 1} / {lessonVocab.length}
+            </p>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() =>
+                setSliderActiveVocab((prev) =>
+                  Math.min(lessonVocab.length - 1, prev + 1),
+                )
+              }
+            >
+              Next
+            </button>
+          </div>
+        </>
+      ) : (
+        <div className="vocab-list flex flex-wrap justify-normal items-center gap-2 p-1">
+          {lessonVocab?.map((vocab, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                setSliderActiveVocab(index);
+              }}
+              className="border-b border-gray-300 rounded p-2 w-full flex flex-row justify-between items-center"
+            >
+              <div className="w-[20%] ">
+                <p className="text-[30px] font-bold text-[#000000]">
+                  {vocab?.japanese}
+                </p>
+                <p className="text-[16px] text-[#000000]">
+                  ( {vocab?.pronounce} )
+                </p>
+              </div>
+              <p className="text-[14px] text-[#000000] w-[20%]">
+                {vocab?.kanji}
+              </p>
+              <p className="text-lg text-[#000000] w-[20%] ">
+                {vocab?.english}
+              </p>
+              <p className="text-[14px] text-[#000000] w-[20%]">
+                {vocab?.bangle}, [{index + 1}]
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      )}
+    </>
   );
 }

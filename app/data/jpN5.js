@@ -614,7 +614,7 @@ export const jpN5 = [
         bangle: "বিয়ার",
       },
       {
-        japanese: "さけ",
+        japanese: "[お]さけ",
         pronounce: "সাকে",
         english: "alcohol / sake",
         kanji: "酒",

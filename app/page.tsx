@@ -187,6 +187,15 @@ export default function Home() {
           ))}
         </div>
       )}
+
+      <a
+        href="https://mahadidev7.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#111111] mt-9 "
+      >
+        Owner By @mahadidev7
+      </a>
     </>
   );
 }

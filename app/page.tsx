@@ -8,6 +8,7 @@ type VocabItem = {
   english: string;
   bangle: string;
   kanji: string;
+  english_pronounce: string;
 };
 
 export default function Home() {
@@ -173,6 +174,9 @@ export default function Home() {
                 <p className="text-[16px] text-[#000000]">
                   ( {vocab?.pronounce} )
                 </p>
+                <p className="text-[16px] text-[#000000]">
+                  ( {vocab?.english_pronounce} )
+                </p>
               </div>
               <p className="text-[14px] text-[#000000] w-[20%]">
                 {vocab?.kanji}
@@ -192,7 +196,7 @@ export default function Home() {
         href="https://mahadidev7.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#111111] mt-9 "
+        className="text-[#111111] my-6 text-center block text-[14px]"
       >
         Owner By @mahadidev7
       </a>

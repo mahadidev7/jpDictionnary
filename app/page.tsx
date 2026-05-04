@@ -8,7 +8,7 @@ type VocabItem = {
   english: string;
   bangle: string;
   kanji: string;
-  english_pronounce: string;
+  english_pronounce?: string;
 };
 
 export default function Home() {

@@ -196,7 +196,7 @@ export default function Home() {
         href="https://mahadidev7.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#111111] my-6 text-center block text-[14px]"
+        className="text-[#111111] my-6 text-center text-[14px]"
       >
         Owner By @mahadidev7
       </a>

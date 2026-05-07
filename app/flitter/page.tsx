@@ -13,7 +13,7 @@ type VocabItem = {
 export default function Flitter() {
   const [lessonVocab, setLessonVocab] = useState<VocabItem[]>([]);
   const [sliderActiveVocab, setSliderActiveVocab] = useState(0);
-  const [isSlider, setIsSlider] = useState(true);
+  const [isBangla, setIsBangla] = useState(true);
 
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
@@ -34,7 +34,7 @@ export default function Flitter() {
     setLessonVocab(shuffled);
   }
 
-   const handelPOPUPFun = (url: string) => {
+  const handelPOPUPFun = (url: string) => {
     window.open(url, "_blank", "width=500,height=700");
   };
 
@@ -53,18 +53,6 @@ export default function Flitter() {
         ))}
       </div>
       <div className="flex flex-wrap w-full p-2 gap-2">
-        <button
-          className="bg-black p-2 text-white rounded"
-          onClick={() => setIsSlider(false)}
-        >
-          All
-        </button>
-        <button
-          className="bg-black p-2 text-white rounded"
-          onClick={() => setIsSlider(true)}
-        >
-          slider
-        </button>
         <div className="flex flex-wrap gap-2 justify-end items-center">
           <button
             className="bg-black p-2 text-white rounded"
@@ -102,6 +90,12 @@ export default function Flitter() {
           >
             shuffle
           </button>
+          <button
+            className="bg-black p-2 text-white rounded"
+            onClick={() => setIsBangla(!isBangla)}
+          >
+            Bangla / Japanese
+          </button>
         </div>
       </div>
       <div className="flex flex-wrap justify-normal items-center gap-2 p-4">
@@ -113,10 +107,14 @@ export default function Flitter() {
             }}
             className="flex justify-between items-center"
           >
-            <div className="">
-              <p className="text-[22px] font-bold text-[#000000]">
-                {vocab?.japanese},
-              </p>
+            <div className={` ${sliderActiveVocab === index ? "bg-gray-300 px-1 rounded" : ""} cursor-pointer`}>
+              {isBangla ? (
+                <p className="text-[22px] font-bold text-[#000000]">
+                  {vocab?.japanese},
+                </p>
+              ) : (
+                <p className="text-[16px] text-[#000000]">{vocab?.bangle},</p>
+              )}
             </div>
           </div>
         ))}

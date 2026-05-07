@@ -192,14 +192,16 @@ export default function Home() {
         </div>
       )}
 
-      <a
+     <div className="flex flex-wrap gap-2 justify-end items-center w-full p-2">
+       <a
         href="https://mahadidev7.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-[#111111] my-6 text-center text-[14px]"
       >
-        Owner By @mahadidev7
+        Created By @mahadidev7
       </a>
+     </div>
     </>
   );
 }

@@ -42,16 +42,6 @@ export default function Flitter() {
 
   const handelCheck = () => {
     setIsShowCheckJapanese(true);
-    if (
-      typeKey.trim().toLowerCase() ===
-      lessonVocab[sliderActiveVocab]?.japanese.toLowerCase()
-    ) {
-      alert("Correct!");
-      return;
-    } else {
-      alert("Incorrect! Try again.");
-      return;
-    }
   };
 
   return (

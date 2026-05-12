@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-wrap w-full p-2 gap-2">
+      <div className="flex overflow-auto w-full p-2 gap-2">
         {jpN5?.map((word, index) => (
           <div key={index} className="">
             <button
@@ -54,7 +54,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="flex flex-wrap w-full p-2 gap-2">
+      <div className="flex overflow-auto w-full p-2 gap-2">
         <button
           className="bg-black p-2 text-white rounded"
           onClick={() => setIsSlider(false)}
@@ -67,44 +67,42 @@ export default function Home() {
         >
           slider
         </button>
-        <div className="flex flex-wrap gap-2 justify-end items-center">
-          <button
-            className="bg-black p-2 text-white rounded"
-            onClick={() =>
-              handelPOPUPFun(
-                `https://www.japandict.com/?s=${lessonVocab[sliderActiveVocab]?.japanese}&lang=eng`,
-              )
-            }
-          >
-            japandict
-          </button>
-          <button
-            className="bg-black p-2 text-white rounded"
-            onClick={() =>
-              handelPOPUPFun(
-                `https://takoboto.jp/?q=${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
-              )
-            }
-          >
-            takoboto
-          </button>
-          <button
-            className="bg-black p-2 text-white rounded"
-            onClick={() =>
-              handelPOPUPFun(
-                `https://jisho.org/search/${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
-              )
-            }
-          >
-            jisho
-          </button>
-          <button
-            className="bg-black p-2 text-white rounded"
-            onClick={() => shuffle()}
-          >
-            shuffle
-          </button>
-        </div>
+        <button
+          className="bg-black p-2 text-white rounded"
+          onClick={() =>
+            handelPOPUPFun(
+              `https://www.japandict.com/?s=${lessonVocab[sliderActiveVocab]?.japanese}&lang=eng`,
+            )
+          }
+        >
+          japandict
+        </button>
+        <button
+          className="bg-black p-2 text-white rounded"
+          onClick={() =>
+            handelPOPUPFun(
+              `https://takoboto.jp/?q=${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
+            )
+          }
+        >
+          takoboto
+        </button>
+        <button
+          className="bg-black p-2 text-white rounded"
+          onClick={() =>
+            handelPOPUPFun(
+              `https://jisho.org/search/${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
+            )
+          }
+        >
+          jisho
+        </button>
+        <button
+          className="bg-black p-2 text-white rounded"
+          onClick={() => shuffle()}
+        >
+          shuffle
+        </button>
       </div>
 
       {isSlider ? (
@@ -192,16 +190,16 @@ export default function Home() {
         </div>
       )}
 
-     <div className="flex flex-wrap gap-2 justify-end items-center w-full p-2">
-       <a
-        href="https://mahadidev7.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#111111] my-6 text-center text-[14px]"
-      >
-        Created By @mahadidev7
-      </a>
-     </div>
+      <div className="flex flex-wrap gap-2 justify-end items-center w-full p-2">
+        <a
+          href="https://mahadidev7.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#111111] my-6 text-center text-[14px]"
+        >
+          Created By @mahadidev7
+        </a>
+      </div>
     </>
   );
 }

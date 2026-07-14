@@ -12,16 +12,24 @@ type VocabItem = {
 };
 
 export default function Home() {
-  const [lessonVocab, setLessonVocab] = useState<VocabItem[]>([]);
+  const [lessonVocab, setLessonVocab] = useState<VocabItem[]>(
+    jpN5[0]?.lessonVocabList,
+  );
   const [sliderActiveVocab, setSliderActiveVocab] = useState(0);
   const [isSlider, setIsSlider] = useState(true);
+  const [iscloseDrower, setIsCloseDrower] = useState(false);
+  const [showText, setShowText] = useState<keyof VocabItem>("japanese");
 
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
+    setSliderActiveVocab(0);
   };
 
   const handelPOPUPFun = (url: string) => {
     window.open(url, "_blank", "width=500,height=700");
+  };
+  const closeDrowerHandler = () => {
+    setIsCloseDrower(!iscloseDrower);
   };
 
   function shuffle() {
@@ -37,38 +45,48 @@ export default function Home() {
     }
 
     setLessonVocab(shuffled);
+    setSliderActiveVocab(0);
   }
 
   return (
-    <>
-      <div className="flex overflow-auto w-full p-2 gap-2">
-        {jpN5?.map((word, index) => (
-          <div key={index} className="">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    <div className="relative w-full h-screen flex flex-col justify-start items-center">
+      <div className="flex overflow-auto w-full p-2 gap-2 border-b-2 mb-4 py-9 md:py-4">
+        <select
+          className="bg-[#D9D9D9] p-1 text-black rounded"
+          onChange={(e) => {
+            const lessonIndex = Number(e.target.value);
+            if (!Number.isNaN(lessonIndex)) {
+              handleClick(jpN5[lessonIndex]?.lessonVocabList || []);
+            }
+          }}
+        >
+          <option value="" disabled>
+            Select a lesson
+          </option>
+          {jpN5?.map((word, index) => (
+            <option
+              key={index}
+              value={index}
               onClick={() => handleClick(word.lessonVocabList)}
             >
-              <p className="text-lg font-bold">{word.lesson}</p>
-            </button>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex overflow-auto w-full p-2 gap-2">
+              {word.lesson}
+            </option>
+          ))}
+        </select>
         <button
-          className="bg-black p-2 text-white rounded"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() => setIsSlider(false)}
         >
           All
         </button>
         <button
-          className="bg-black p-2 text-white rounded"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() => setIsSlider(true)}
         >
           slider
         </button>
         <button
-          className="bg-black p-2 text-white rounded"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() =>
             handelPOPUPFun(
               `https://www.japandict.com/?s=${lessonVocab[sliderActiveVocab]?.japanese}&lang=eng`,
@@ -78,7 +96,7 @@ export default function Home() {
           japandict
         </button>
         <button
-          className="bg-black p-2 text-white rounded"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() =>
             handelPOPUPFun(
               `https://takoboto.jp/?q=${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
@@ -88,7 +106,7 @@ export default function Home() {
           takoboto
         </button>
         <button
-          className="bg-black p-2 text-white rounded"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() =>
             handelPOPUPFun(
               `https://jisho.org/search/${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
@@ -98,7 +116,7 @@ export default function Home() {
           jisho
         </button>
         <button
-          className="bg-black p-2 text-white rounded"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() => shuffle()}
         >
           shuffle
@@ -107,28 +125,22 @@ export default function Home() {
 
       {isSlider ? (
         <>
-          <div className="flex justify-center items-center w-full p-2">
-            <div className="border border-gray-300 rounded p-2 w-full">
-              <div className="mb-2 flex flex-col justify-end items-end">
-                <p className="text-[30px] font-bold text-[#000000]">
-                  {lessonVocab[sliderActiveVocab]?.japanese}
-                </p>
-                <p className="text-[16px] text-[#000000]">
-                  ( {lessonVocab[sliderActiveVocab]?.pronounce} )
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-start items-start">
-                <p className="text-lg text-[#000000]">
-                  {lessonVocab[sliderActiveVocab]?.english || "---"}
-                </p>
-                <p className="text-[14px] text-[#000000]">
-                  {lessonVocab[sliderActiveVocab]?.bangle || "---"}
+          <div className="md:w-1/3 w-full">
+            {/* <AudioPlayer
+              autoPlay
+              src="./n5Audio/l-1/1わたし.wav"
+            /> */}
+          </div>
+          <div className="flex flex-row justify-center items-center w-full p-2 border">
+            <div
+              className="border border-gray-300 rounded-xl py-22 p-2 md:w-1/2 w-full bg-[#096992]"
+              onClick={() => closeDrowerHandler()}
+            >
+              <div className="flex flex-col justify-end items-center">
+                <p className="text-[30px] font-bold text-white">
+                  {lessonVocab[sliderActiveVocab]?.[showText]}
                 </p>
               </div>
-              <p className="text-[14px] text-right text-[#000000]">
-                {lessonVocab[sliderActiveVocab]?.kanji || "---"}
-              </p>
             </div>
           </div>
           <div className="flex flex-wrap justify-center items-center w-full p-2 mb-9 gap-3">
@@ -190,7 +202,7 @@ export default function Home() {
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2 justify-end items-center w-full p-2">
+      <div className="flex flex-wrap gap-2 justify-center items-center w-full p-2">
         <a
           href="https://mahadidev7.vercel.app/"
           target="_blank"
@@ -200,6 +212,52 @@ export default function Home() {
           Created By @mahadidev7
         </a>
       </div>
-    </>
+
+      {/* drower  */}
+      {iscloseDrower && (
+        <div className="absolute top-0 right-0 p-4 bg-[#D9D9D9] md:w-1/3 w-full h-full">
+          <div className="border border-gray-300 rounded-xl p-4 w-full">
+            <div className="flex flex-col gap-3">
+              <button
+                className="bg-amber-700 p-2 rounded mb-8"
+                onClick={() => closeDrowerHandler()}
+              >
+                close
+              </button>
+              <p
+                className="text-[30px] font-bold text-[#000000] border-b-2 border-gray-200"
+                onClick={() => setShowText("japanese")}
+              >
+                {lessonVocab[sliderActiveVocab]?.japanese}
+              </p>
+              <p
+                className="text-[16px] text-[#000000] border-b border-gray-200"
+                onClick={() => setShowText("pronounce")}
+              >
+                ( {lessonVocab[sliderActiveVocab]?.pronounce} )
+              </p>
+              <p
+                className="text-lg text-[#000000] border-b border-gray-200"
+                onClick={() => setShowText("english")}
+              >
+                {lessonVocab[sliderActiveVocab]?.english || "---"}
+              </p>
+              <p
+                className="text-[14px] text-[#000000] border-b border-gray-200"
+                onClick={() => setShowText("bangle")}
+              >
+                {lessonVocab[sliderActiveVocab]?.bangle || "---"}
+              </p>
+              <p
+                className="text-[25px] text-[#000000] border-b border-gray-200"
+                onClick={() => setShowText("kanji")}
+              >
+                {lessonVocab[sliderActiveVocab]?.kanji || "---"}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

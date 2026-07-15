@@ -8,6 +8,7 @@ type VocabItem = {
   english: string;
   bangle: string;
   kanji: string;
+  audio?: string;
   english_pronounce?: string;
 };
 
@@ -19,6 +20,7 @@ export default function Home() {
   const [isSlider, setIsSlider] = useState(true);
   const [iscloseDrower, setIsCloseDrower] = useState(false);
   const [showText, setShowText] = useState<keyof VocabItem>("japanese");
+  const [isAudio, setIsAudio] = useState(false);
 
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
@@ -30,6 +32,16 @@ export default function Home() {
   };
   const closeDrowerHandler = () => {
     setIsCloseDrower(!iscloseDrower);
+  };
+
+  const audioHandler = (audioData: keyof VocabItem) => {
+    setShowText(audioData);
+    setIsAudio(true);
+  };
+
+  const showTextHandler = (data: keyof VocabItem) => {
+    setShowText(data);
+    setIsAudio(false);
   };
 
   function shuffle() {
@@ -125,21 +137,38 @@ export default function Home() {
 
       {isSlider ? (
         <>
-          <div className="md:w-1/3 w-full">
-            {/* <AudioPlayer
-              autoPlay
-              src="./n5Audio/l-1/1わたし.wav"
-            /> */}
-          </div>
-          <div className="flex flex-row justify-center items-center w-full p-2 border">
-            <div
-              className="border border-gray-300 rounded-xl py-22 p-2 md:w-1/2 w-full bg-[#096992]"
-              onClick={() => closeDrowerHandler()}
-            >
+          <div className="flex flex-col justify-center items-center w-full border">
+            <p className="text-[#666] text-left md:w-1/2 w-full px-2">{showText}</p>
+            <div className="border border-gray-300 rounded-xl py-22 p-2 md:w-1/2 w-full bg-[#096992]">
               <div className="flex flex-col justify-end items-center">
-                <p className="text-[30px] font-bold text-white">
-                  {lessonVocab[sliderActiveVocab]?.[showText]}
-                </p>
+                {isAudio ? (
+                  lessonVocab[sliderActiveVocab]?.audio ? (
+                    <div className="flex flex-col justify-center items-center gap-2">
+                      <iframe
+                        width="300"
+                        height="100"
+                        allow="autoplay; encrypted-media"
+                        src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
+                      ></iframe>
+                      <input
+                        className="bg-[#D9D9D9] p-2 text-black rounded px-4 w-full mt-2 outline-none"
+                        type="text"
+                        placeholder="Enter listening word"
+                      />
+                      <button className="bg-[#D9D9D9] hover:opacity-80 text-black py-2 px-4 rounded w-full">
+                        Submit
+                      </button>
+                    </div>
+                  ) : (
+                    <p className="text-[16px]  text-red-300">
+                      Audio not available
+                    </p>
+                  )
+                ) : (
+                  <p className="text-[30px] font-bold text-white">
+                    {lessonVocab[sliderActiveVocab]?.[showText]}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -165,6 +194,9 @@ export default function Home() {
             >
               Next
             </button>
+            <button
+              className="bg-amber-700 p-2 rounded"
+              onClick={() => closeDrowerHandler()}  >Show Details</button>
           </div>
         </>
       ) : (
@@ -226,34 +258,46 @@ export default function Home() {
               </button>
               <p
                 className="text-[30px] font-bold text-[#000000] border-b-2 border-gray-200"
-                onClick={() => setShowText("japanese")}
+                onClick={() => showTextHandler("japanese")}
               >
                 {lessonVocab[sliderActiveVocab]?.japanese}
               </p>
               <p
                 className="text-[16px] text-[#000000] border-b border-gray-200"
-                onClick={() => setShowText("pronounce")}
+                onClick={() => showTextHandler("pronounce")}
               >
                 ( {lessonVocab[sliderActiveVocab]?.pronounce} )
               </p>
               <p
                 className="text-lg text-[#000000] border-b border-gray-200"
-                onClick={() => setShowText("english")}
+                onClick={() => showTextHandler("english")}
               >
                 {lessonVocab[sliderActiveVocab]?.english || "---"}
               </p>
               <p
                 className="text-[14px] text-[#000000] border-b border-gray-200"
-                onClick={() => setShowText("bangle")}
+                onClick={() => showTextHandler("bangle")}
               >
                 {lessonVocab[sliderActiveVocab]?.bangle || "---"}
               </p>
               <p
                 className="text-[25px] text-[#000000] border-b border-gray-200"
-                onClick={() => setShowText("kanji")}
+                onClick={() => showTextHandler("kanji")}
               >
                 {lessonVocab[sliderActiveVocab]?.kanji || "---"}
               </p>
+              <p
+                className="text-[25px] text-[#000000] border-b border-gray-200"
+                onClick={() => audioHandler("audio")}
+              >
+                listening test: {lessonVocab[sliderActiveVocab]?.audio || "---"}
+              </p>
+              <iframe
+                width="300"
+                height="100"
+                allow="autoplay; encrypted-media"
+                src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
+              ></iframe>
             </div>
           </div>
         </div>

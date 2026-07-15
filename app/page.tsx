@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { jpN5 } from "./data/jpN5";
+import Image from "next/image";
 
 type VocabItem = {
   japanese: string;
@@ -77,9 +78,10 @@ export default function Home() {
   };
 
   return (
-    <div className="relative w-full h-screen flex flex-col justify-start items-center">
-      <div className="flex w-full p-2 gap-2 md:py-4 overflow-auto">
+    <div className="relative w-full h-full flex flex-col justify-start items-center">
+      <div className="flex w-full p-2 gap-2 overflow-x-auto">
         <select
+          id="framework"
           className="bg-[#D9D9D9] p-1 text-black rounded"
           onChange={(e) => {
             const lessonIndex = Number(e.target.value);
@@ -151,8 +153,8 @@ export default function Home() {
         </button>
       </div>
 
-      {isSlider ? (
-        <>
+      {isSlider && (
+        <div className="w-full my-24">
           <div className="flex flex-col justify-center items-center w-full border">
             <p className="text-[#666] text-left md:w-1/2 w-full px-2">
               {showText}
@@ -169,12 +171,12 @@ export default function Home() {
                         src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
                       ></iframe>
                       <input
-                        className={` p-2 text-black rounded px-4 w-full mt-2 outline-none ${textError === 'error' ? 'bg-[#f0aaaa]' : 'bg-[#D9D9D9]' }`}
+                        className={` p-2 text-black rounded px-4 w-full mt-2 outline-none ${textError === "error" ? "bg-[#f0aaaa]" : textError === "success" ? 'bg-[#9ffadf]' : 'bg-[#D9D9D9]'} `}
                         type="text"
                         value={text}
                         placeholder="Enter listening word"
                         onChange={handleChange}
-                        onFocus={ () => setTextError("success")}
+                        onFocus={() => setTextError("54")}
                       />
                       <button
                         onClick={handleCheck}
@@ -225,51 +227,95 @@ export default function Home() {
               Show Details
             </button>
           </div>
-        </>
-      ) : (
-        <div className="vocab-list flex flex-wrap justify-normal items-center gap-2 p-1">
-          {lessonVocab?.map((vocab, index) => (
-            <div
-              key={index}
-              onClick={() => {
-                setSliderActiveVocab(index);
-              }}
-              className="border-b border-gray-300 rounded p-2 w-full flex flex-row justify-between items-center"
-            >
-              <div className="w-[20%] ">
-                <p className="text-[30px] font-bold text-[#000000]">
-                  {vocab?.japanese}
-                </p>
-                <p className="text-[16px] text-[#000000]">
-                  ( {vocab?.pronounce} )
-                </p>
-                <p className="text-[16px] text-[#000000]">
-                  ( {vocab?.english_pronounce} )
-                </p>
-              </div>
-              <p className="text-[14px] text-[#000000] w-[20%]">
-                {vocab?.kanji}
-              </p>
-              <p className="text-lg text-[#000000] w-[20%] ">
-                {vocab?.english}
-              </p>
-              <p className="text-[14px] text-[#000000] w-[20%]">
-                {vocab?.bangle}, [{index + 1}]
-              </p>
-            </div>
-          ))}
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2 justify-center items-center w-full p-2">
-        <a
-          href="https://mahadidev7.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#111111] my-6 text-center text-[14px]"
-        >
-          Created By @mahadidev7
-        </a>
+      {/* footer  */}
+      <div className="bg-[#034a53] w-full">
+        <div className="flex justify-center items-center gap-2 flex-col mt-28 p-3">
+          <a
+            href="https://mahadidev7.vercel.app/"
+            target="_blank"
+            className="text-lg italic capitalize"
+          >
+            Created By @mahadidev7
+          </a>
+          <p className="text-center md:w-3/5 w-80 text-[16px]">
+            This website was built with care for everyone learning Japanese. We
+            hope it makes your studies easier and more enjoyable. Thank you for
+            being part of our community, and please keep us in your prayers.
+          </p>
+          <div className=" rounded-full flex p-2 md:justify-between justify-center gap-2 md:gap-0 items-center mt-4 flex-wrap bg-black">
+            <p className="text-[18px] px-9 pl-5 text-white">
+              Free counseling form
+            </p>
+            <a
+              href="https://forms.gle/X3BGRT5xHmX8Gj669"
+              target="_blank"
+              className="text-center text-black text-[18px] bg-white text-p_primary p-6 py-2 rounded-full"
+            >
+              Lets Go
+            </a>
+          </div>
+        </div>
+        <div className="flex justify-center items-center gap-9 flex-wrap my-10">
+          <a
+            href="https://twitter.com/mahadidev7"
+            target="_blank"
+            className="text-[18px] capitalize italic underline"
+          >
+            twitter
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mahadidev7/"
+            target="_blank"
+            className="text-[18px] capitalize italic underline"
+          >
+            linkedin
+          </a>
+          <a
+            href="https://github.com/mahadidev7"
+            target="_blank"
+            className="text-[18px] capitalize italic underline"
+          >
+            github
+          </a>
+        </div>
+        <div className="border-t border-borderGray ">
+          <div className="flex justify-center items-center relative">
+            <div className="md:w-[1440px] w-full undefined">
+              <div className="grid grid-cols-1 lg:grid-cols-3">
+                <div className="lg:col-span-2 lg:border-r border-borderGray  py-4 lg:pr-6">
+                  <div className="md:flex justify-between items-center flex-wrap gap-2 px-2">
+                    <div className="flex justify-between items-center md:items-start py-2 flex-col flex-wrap">
+                      <p className="text-[16px] capitalize">Phone Number</p>
+                      <p className="text-[18px] text-secondary className=">
+                        +880 181 221 7803
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center md:items-start py-2 flex-col flex-wrap">
+                      <p className="text-[16px] capitalize">Email Address</p>
+                      <p className="text-[18px] text-secondary className=">
+                        mahadidev7@gmail.com
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center md:items-start py-2 flex-col flex-wrap">
+                      <p className="text-[16px] capitalize">location</p>
+                      <p className="text-[18px] text-secondary className=">
+                        Cumilla, Bangladesh
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-span-1 pl-3 py-4 flex justify-center items-center border-y lg:border-none border-borderGray">
+                  <p className="lowercase text-[18px] text-center">
+                    copyright &amp; Design By @mahadidev7 - 2026
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* drower  */}
@@ -287,37 +333,37 @@ export default function Home() {
                 className="text-[30px] font-bold text-[#000000] border-b-2 border-gray-200"
                 onClick={() => showTextHandler("japanese")}
               >
-                {lessonVocab[sliderActiveVocab]?.japanese}
+               japanese:  {lessonVocab[sliderActiveVocab]?.japanese}
               </p>
               <p
                 className="text-[16px] text-[#000000] border-b border-gray-200"
                 onClick={() => showTextHandler("pronounce")}
               >
-                ( {lessonVocab[sliderActiveVocab]?.pronounce} )
+                Bangla Pronounce: {lessonVocab[sliderActiveVocab]?.pronounce} 
               </p>
               <p
                 className="text-lg text-[#000000] border-b border-gray-200"
                 onClick={() => showTextHandler("english")}
               >
-                {lessonVocab[sliderActiveVocab]?.english || "---"}
+                English Pronounce : {lessonVocab[sliderActiveVocab]?.english || "---"}
               </p>
               <p
                 className="text-[14px] text-[#000000] border-b border-gray-200"
                 onClick={() => showTextHandler("bangle")}
               >
-                {lessonVocab[sliderActiveVocab]?.bangle || "---"}
+               Bangla :  {lessonVocab[sliderActiveVocab]?.bangle || "---"}
               </p>
               <p
                 className="text-[25px] text-[#000000] border-b border-gray-200"
                 onClick={() => showTextHandler("kanji")}
               >
-                {lessonVocab[sliderActiveVocab]?.kanji || "---"}
+              Kanji:   {lessonVocab[sliderActiveVocab]?.kanji || "---"}
               </p>
               <p
                 className="text-[25px] text-[#000000] border-b border-gray-200"
                 onClick={() => audioHandler("audio")}
               >
-                listening test: {lessonVocab[sliderActiveVocab]?.audio || "---"}
+                listening ID: {lessonVocab[sliderActiveVocab]?.audio || "---"}
               </p>
               <iframe
                 width="auto"

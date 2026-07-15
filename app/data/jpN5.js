@@ -775,11 +775,11 @@ export const jpN5 = [
     lesson: "3",
     lessonVocabList: [
       {
-        japanese: "リリ",
-        pronounce: "রিরি",
-        english: "Lily (name)",
-        kanji: "リリ",
-        bangle: "রিরি",
+        japanese: "ここ",
+        pronounce: "Koko",
+        english: "here",
+        kanji: "ここ",
+        bangle: "এখানে",
       },
       {
         japanese: "そこ",
@@ -801,6 +801,7 @@ export const jpN5 = [
         english: "where",
         kanji: "どこ",
         bangle: "কোথায়",
+        audio: "253A2361002873",
       },
       {
         japanese: "こちら",
@@ -808,6 +809,7 @@ export const jpN5 = [
         english: "this way / here (polite)",
         kanji: "こちら",
         bangle: "এই দিকে",
+        audio: "253A2361002813",
       },
       {
         japanese: "そちら",
@@ -815,6 +817,7 @@ export const jpN5 = [
         english: "that way (polite)",
         kanji: "そちら",
         bangle: "ওই দিকে",
+        audio: "253A2361002804",
       },
       {
         japanese: "あちら",
@@ -822,6 +825,7 @@ export const jpN5 = [
         english: "over there (polite)",
         kanji: "あちら",
         bangle: "ওদিকে",
+        audio: "253A2361002858",
       },
       {
         japanese: "どちら",
@@ -829,6 +833,7 @@ export const jpN5 = [
         english: "which way / where (polite)",
         kanji: "どちら",
         bangle: "কোন দিকে",
+        audio: "253A2361002822",
       },
       {
         japanese: "きょうしつ",
@@ -836,6 +841,7 @@ export const jpN5 = [
         english: "classroom",
         kanji: "教室",
         bangle: "শ্রেণিকক্ষ",
+        audio: "253A2361002852",
       },
       {
         japanese: "しょくどう",
@@ -843,6 +849,7 @@ export const jpN5 = [
         english: "cafeteria",
         kanji: "食堂",
         bangle: "ক্যান্টিন",
+        audio: "253A2361002795",
       },
       {
         japanese: "じむしょ",
@@ -850,6 +857,7 @@ export const jpN5 = [
         english: "office",
         kanji: "事務所",
         bangle: "অফিস",
+        audio: "253A2361002828", 
       },
       {
         japanese: "かいぎしつ",
@@ -857,6 +865,7 @@ export const jpN5 = [
         english: "meeting room",
         kanji: "会議室",
         bangle: "মিটিং রুম",
+        audio: "253A2361002792",
       },
       {
         japanese: "うけつけ",
@@ -864,6 +873,7 @@ export const jpN5 = [
         english: "reception",
         kanji: "受付",
         bangle: "রিসেপশন",
+        audio: "253A2361002843",
       },
       {
         japanese: "ロビー",
@@ -871,6 +881,7 @@ export const jpN5 = [
         english: "lobby",
         kanji: "ロビー",
         bangle: "লবি",
+        audio: "253A2361002837",
       },
       {
         japanese: "へや",
@@ -878,6 +889,7 @@ export const jpN5 = [
         english: "room",
         kanji: "部屋",
         bangle: "ঘর",
+        audio: "253A2361002855",
       },
       {
         japanese: "トイレ",
@@ -885,6 +897,7 @@ export const jpN5 = [
         english: "toilet",
         kanji: "トイレ",
         bangle: "টয়লেট",
+        audio: "253A2361002846",
       },
       {
         japanese: "おてあらい",
@@ -892,6 +905,7 @@ export const jpN5 = [
         english: "restroom (polite)",
         kanji: "お手洗い",
         bangle: "হাত ধোয়ার জায়গা / টয়লেট",
+        audio: "253A2361002861",
       },
       {
         japanese: "かいだん",
@@ -899,6 +913,7 @@ export const jpN5 = [
         english: "stairs",
         kanji: "階段",
         bangle: "সিঁড়ি",
+        audio: "253A2361002876",
       },
       {
         japanese: "エレベータ",
@@ -906,6 +921,7 @@ export const jpN5 = [
         english: "elevator",
         kanji: "エレベーター",
         bangle: "লিফট",
+        audio: "253A2361002849",
       },
       {
         japanese: "エスカレーター",
@@ -913,13 +929,15 @@ export const jpN5 = [
         english: "escalator",
         kanji: "エスカレーター",
         bangle: "এস্কেলেটর",
+        audio: "253A2361002882",
       },
       {
-        japanese: "くに",
-        pronounce: "কুনি",
+        japanese: "[お] くに",
+        pronounce: "[ওহ] কুনি",
         english: "country",
         kanji: "国",
         bangle: "দেশ",
+        audio: "253A2361002864",  
       },
       {
         japanese: "かいしゃ",
@@ -927,6 +945,7 @@ export const jpN5 = [
         english: "company",
         kanji: "会社",
         bangle: "কোম্পানি",
+        audio: "253A2361002786",
       },
       {
         japanese: "うち",
@@ -934,6 +953,7 @@ export const jpN5 = [
         english: "home / my house",
         kanji: "うち",
         bangle: "বাড়ি",
+        audio: "253A2361002756",
       },
       {
         japanese: "でんわ",
@@ -941,6 +961,7 @@ export const jpN5 = [
         english: "telephone",
         kanji: "電話",
         bangle: "ফোন",
+        audio: "253A2361002759",
       },
 
       {
@@ -949,6 +970,7 @@ export const jpN5 = [
         english: "shoes",
         kanji: "靴",
         bangle: "জুতা",
+        audio: "253A2361002789",
       },
       {
         japanese: "ネクタイ",
@@ -956,6 +978,7 @@ export const jpN5 = [
         english: "necktie",
         kanji: "ネクタイ",
         bangle: "টাই",
+        audio: "253A2361002768",
       },
       {
         japanese: "ワイン",
@@ -963,13 +986,23 @@ export const jpN5 = [
         english: "wine",
         kanji: "ワイン",
         bangle: "ওয়াইন",
+        audio: "253A2361002780",
       },
       {
-        japanese: "たばこうりば",
-        pronounce: "তাবাকো উরিবা",
-        english: "tobacco shop / cigarette counter",
-        kanji: "たばこ売り場",
-        bangle: "সিগারেট বিক্রির জায়গা",
+        japanese: "たばこ",
+        pronounce: "তাবাকো",
+        english: "cigarette",
+        kanji: "",
+        bangle: "সিগারেট",
+        audio: "253A2361002774",
+      },
+      {
+        japanese: "うりば",
+        pronounce: "উরিবা",
+        english: "shop / counter",
+        kanji: "",
+        bangle: "জায়গা",
+        audio: "253A2361002771",
       },
       {
         japanese: "ちか",
@@ -977,6 +1010,7 @@ export const jpN5 = [
         english: "basement / underground",
         kanji: "地下",
         bangle: "ভূগর্ভ / বেসমেন্ট",
+        audio: "253A2361002765",
       },
 
       {
@@ -985,6 +1019,7 @@ export const jpN5 = [
         english: "first floor",
         kanji: "一階",
         bangle: "১ম তলা",
+        audio: "253A2361011525",
       },
       {
         japanese: "なんがい",
@@ -992,6 +1027,7 @@ export const jpN5 = [
         english: "which floor",
         kanji: "何階",
         bangle: "কোন তলা",
+        audio: "253A2361002762",
       },
       {
         japanese: "えん",
@@ -1006,6 +1042,7 @@ export const jpN5 = [
         english: "how much",
         kanji: "いくら",
         bangle: "কত দাম",
+        audio: "253A2361002867",
       },
       {
         japanese: "ひゃく",
@@ -1013,6 +1050,7 @@ export const jpN5 = [
         english: "hundred",
         kanji: "百",
         bangle: "একশ",
+        audio: "253A2361002810",
       },
       {
         japanese: "せん",
@@ -1020,6 +1058,7 @@ export const jpN5 = [
         english: "thousand",
         kanji: "千",
         bangle: "হাজার",
+        audio: "253A2361002807",
       },
       {
         japanese: "まん",
@@ -1027,6 +1066,7 @@ export const jpN5 = [
         english: "ten thousand",
         kanji: "万",
         bangle: "দশ হাজার",
+        audio: "253A2361002816",
       },
       {
         japanese: "すみません",
@@ -1034,6 +1074,7 @@ export const jpN5 = [
         english: "excuse me / sorry",
         kanji: "すみません",
         bangle: "মাফ করবেন",
+        audio: "253A2361002870",
       },
       {
         japanese: "でございます",
@@ -1041,6 +1082,7 @@ export const jpN5 = [
         english: "is (very polite)",
         kanji: "でございます",
         bangle: "হচ্ছে (ভদ্রভাবে)",
+        audio: "253A2361002834",
       },
       {
         japanese: "みせてください",
@@ -1048,6 +1090,7 @@ export const jpN5 = [
         english: "please show me",
         kanji: "見せてください",
         bangle: "দেখান দয়া করে",
+        audio: "253A2361002819",
       },
       {
         japanese: "じゃ",
@@ -1055,6 +1098,7 @@ export const jpN5 = [
         english: "well then",
         kanji: "じゃ",
         bangle: "তাহলে",
+        audio: "253A2361002801",
       },
       {
         japanese: "ください",
@@ -1062,6 +1106,7 @@ export const jpN5 = [
         english: "please give me",
         kanji: "ください",
         bangle: "দয়া করে দিন",
+        audio: "253A2361002831",
       },
       {
         japanese: "しんおおさか",
@@ -1069,6 +1114,7 @@ export const jpN5 = [
         english: "Shin-Osaka",
         kanji: "新大阪",
         bangle: "শিন ওসাকা",
+        audio: "253A2361002798",
       },
       {
         japanese: "イタリア",
@@ -1076,6 +1122,7 @@ export const jpN5 = [
         english: "Italy",
         kanji: "イタリア",
         bangle: "ইতালি",
+        audio: "253A2361002840",
       },
       {
         japanese: "スイス",
@@ -1083,6 +1130,7 @@ export const jpN5 = [
         english: "Switzerland",
         kanji: "スイス",
         bangle: "সুইজারল্যান্ড",
+        audio: "253A2361002825",
       },
     ],
   },
@@ -1096,6 +1144,7 @@ export const jpN5 = [
         english: "to wake up",
         kanji: "起きます",
         bangle: "ঘুম থেকে ওঠা",
+        audio: "3A2361014357",
       },
       {
         japanese: "ねます",

@@ -1623,6 +1623,7 @@ export const jpN5 = [
         english: "to go",
         kanji: "行きます",
         bangle: "যাওয়া",
+        audio: '253A2361035699'
       },
       {
         japanese: "きます",
@@ -1630,6 +1631,7 @@ export const jpN5 = [
         english: "Come",
         kanji: "来ます",
         bangle: "আসা",
+        audio: '253A2361035684'
       },
       {
         japanese: "かえります",
@@ -1637,6 +1639,7 @@ export const jpN5 = [
         english: "to return",
         kanji: "帰ります",
         bangle: "ফিরে যাওয়া",
+        audio: '253A2361035729'
       },
       {
         japanese: "がっこう",
@@ -1644,6 +1647,7 @@ export const jpN5 = [
         english: "school",
         kanji: "学校",
         bangle: "স্কুল",
+        audio: '253A2361035681'
       },
       {
         japanese: "スーパー",
@@ -1651,6 +1655,7 @@ export const jpN5 = [
         english: "Supermarket",
         kanji: "駅",
         bangle: "Super market",
+        audio: '253A2361035696'
       },
       {
         japanese: "えき",
@@ -1658,6 +1663,7 @@ export const jpN5 = [
         english: "Station",
         kanji: "駅  ",
         bangle: "স্টেশন",
+        audio: '253A2361035705'
       },
       {
         japanese: "ひこうき",
@@ -1665,6 +1671,7 @@ export const jpN5 = [
         english: "Airplane",
         kanji: "飛行機",
         bangle: "বিমান",
+        audio: '253A2361035720'
       },
       {
         japanese: "ふね",
@@ -1672,6 +1679,7 @@ export const jpN5 = [
         english: "Ship",
         kanji: "船",
         bangle: "জাহাজ",
+        audio: '253A2361035750'
       },
       {
         japanese: "でんしゃ",
@@ -1679,6 +1687,7 @@ export const jpN5 = [
         english: "Train",
         kanji: "電車",
         bangle: "ট্রেন",
+        audio: '253A2361035687'
       },
       {
         japanese: "ちかてつ",
@@ -1686,6 +1695,7 @@ export const jpN5 = [
         english: "Subway, underground",
         kanji: "地下鉄",
         bangle: "মেট্রো",
+        audio: '253A2361035726'
       },
       {
         japanese: "しんかんせん",
@@ -1693,6 +1703,7 @@ export const jpN5 = [
         english: "Bullet train",
         kanji: "新幹線",
         bangle: "বুলেট ট্রেন",
+        audio: '253A2361035768'
       },
       {
         japanese: "バス",
@@ -1700,6 +1711,7 @@ export const jpN5 = [
         english: "Bus",
         kanji: "バス",
         bangle: "বাস",
+        audio: '253A2361035774'
       },
       {
         japanese: "タクシー",
@@ -1707,6 +1719,7 @@ export const jpN5 = [
         english: "Taxi",
         kanji: "タクシー",
         bangle: "ট্যাক্সি",
+        audio: '253A2361035693'
       },
       {
         japanese: "じてんしゃ",
@@ -1714,6 +1727,7 @@ export const jpN5 = [
         english: "Bicycle",
         kanji: "自転車",
         bangle: "সাইকেল",
+        audio: '253A2361035678'
       },
       {
         japanese: "あるいて",
@@ -1721,6 +1735,7 @@ export const jpN5 = [
         english: "On foot",
         kanji: "歩いて",
         bangle: "পায়ে হেটে",
+        audio: '253A2361035690'
       },
       {
         japanese: "ひと",
@@ -1728,6 +1743,7 @@ export const jpN5 = [
         english: "Person, people",
         kanji: "人",
         bangle: "মানুষ",
+        audio: '253A2361035765'
       },
       {
         japanese: "ともだち",
@@ -1735,6 +1751,7 @@ export const jpN5 = [
         english: "Friend",
         kanji: "友達",
         bangle: "বন্ধু",
+        audio: '253A2361035792'
       },
       {
         japanese: "かれ",
@@ -1742,6 +1759,7 @@ export const jpN5 = [
         english: "He, boyfriend",
         kanji: "彼",
         bangle: "সে, প্রেমিক",
+        audio: '253A2361035702'
       },
       {
         japanese: "かのじょ",
@@ -1749,6 +1767,7 @@ export const jpN5 = [
         english: "She, girlfriend",
         kanji: "彼女",
         bangle: "সে, প্রেমিকা",
+        audio: '253A2361035708'
       },
       {
         japanese: "かぞく",
@@ -1756,6 +1775,7 @@ export const jpN5 = [
         english: "Family",
         kanji: "",
         bangle: "পরিবার",
+        audio: '253A2361035741'
       },
       {
         japanese: "ひとりで",
@@ -1763,6 +1783,7 @@ export const jpN5 = [
         english: "Alone",
         kanji: "",
         bangle: "একলা",
+        audio: '253A2361035717'
       },
       {
         japanese: "せんしゅう",
@@ -1770,6 +1791,7 @@ export const jpN5 = [
         english: "Last week",
         kanji: "",
         bangle: "গত সপ্তাহ",
+        audio: '253A2361035753'
       },
       {
         japanese: "こんしゅう",
@@ -1777,6 +1799,7 @@ export const jpN5 = [
         english: "This week",
         kanji: "",
         bangle: "এই সপ্তাহ",
+        audio: '253A2361035783'
       },
       {
         japanese: "らいしゅう",
@@ -1784,6 +1807,7 @@ export const jpN5 = [
         english: "Next week",
         kanji: "",
         bangle: "আগামী সপ্তাহ",
+        audio: '253A2361035744'
       },
       {
         japanese: "せんげつ",
@@ -1791,6 +1815,7 @@ export const jpN5 = [
         english: "Last month",
         kanji: "",
         bangle: "গত মাস",
+        audio: '253A2361035762'
       },
       {
         japanese: "こんげつ",
@@ -1798,6 +1823,7 @@ export const jpN5 = [
         english: "This month",
         kanji: "",
         bangle: "এই মাস",
+        audio: '253A2361035819'
       },
       {
         japanese: "らいげつ",
@@ -1805,6 +1831,7 @@ export const jpN5 = [
         english: "Next month",
         kanji: "",
         bangle: "আগামী মাস",
+        audio: '253A2361035714'
       },
       {
         japanese: "きょねん",
@@ -1812,6 +1839,7 @@ export const jpN5 = [
         english: "Last year",
         kanji: "",
         bangle: "গত বছর",
+        audio: '253A2361035813'
       },
       {
         japanese: "ことし",
@@ -1819,6 +1847,7 @@ export const jpN5 = [
         english: "This year",
         kanji: "",
         bangle: "এই বছর",
+        audio: '253A2361035723'
       },
       {
         japanese: "らいねん",
@@ -1826,6 +1855,7 @@ export const jpN5 = [
         english: "Next year",
         kanji: "",
         bangle: "আগামী বছর",
+        audio: '253A2361035735'
       },
       {
         japanese: "―がつ ",
@@ -1833,6 +1863,7 @@ export const jpN5 = [
         english: "―month",
         kanji: "",
         bangle: "―মাস",
+        audio: '253A2361035759'
       },
       {
         japanese: "なんがつ ",
@@ -1840,6 +1871,7 @@ export const jpN5 = [
         english: "What month",
         kanji: "",
         bangle: "কোন মাস",
+        audio: '253A2361035780'
       },
       {
         japanese: "ついたち ",
@@ -1847,6 +1879,7 @@ export const jpN5 = [
         english: "First day of the month",
         kanji: "",
         bangle: "মাসের প্রথম দিন, ১ তারিখ",
+        audio: '253A2361035711'
       },
       {
         japanese: "ふつか",
@@ -1854,6 +1887,7 @@ export const jpN5 = [
         english: "Second day of the month",
         kanji: "",
         bangle: "মাসের দ্বিতীয় দিন, ২ তারিখ",
+        audio: '253A2361035798'
       },
       {
         japanese: "みっか",
@@ -1861,6 +1895,7 @@ export const jpN5 = [
         english: "Third day of the month",
         kanji: "",
         bangle: "মাসের তৃতীয় দিন, ৩ তারিখ",
+        audio: '253A2361035732'
       },
       {
         japanese: "よっか",
@@ -1868,6 +1903,7 @@ export const jpN5 = [
         english: "Fourth day of the month",
         kanji: "",
         bangle: "মাসের চতুর্থ দিন, ৪ তারিখ",
+        audio: '253A2361035807'
       },
       {
         japanese: "いつか",
@@ -1875,6 +1911,7 @@ export const jpN5 = [
         english: "Fifth day of the month",
         kanji: "",
         bangle: "মাসের পঞ্চম দিন, ৫ তারিখ",
+        audio: '253A2361035837'
       },
       {
         japanese: "むいか",
@@ -1882,6 +1919,7 @@ export const jpN5 = [
         english: "Sixth day of the month",
         kanji: "",
         bangle: "মাসের ষষ্ঠ দিন, ৬ তারিখ",
+        audio: '253A2361035795'
       },
       {
         japanese: "なのか",
@@ -1889,6 +1927,7 @@ export const jpN5 = [
         english: "Seventh day of the month",
         kanji: "",
         bangle: "মাসের সপ্তম দিন, ৭ তারিখ",
+        audio: '253A2361035771'
       },
       {
         japanese: "ようか",
@@ -1896,6 +1935,7 @@ export const jpN5 = [
         english: "Eighth day of the month",
         kanji: "",
         bangle: "মাসের অষ্টম দিন, ৮ তারিখ",
+        audio: '253A2361035786'
       },
       {
         japanese: "ここのか",
@@ -1903,6 +1943,7 @@ export const jpN5 = [
         english: "Ninth day of the month",
         kanji: "",
         bangle: "মাসের নবম দিন, ৯ তারিখ",
+        audio: '253A2361035747'
       },
       {
         japanese: "とおか",
@@ -1910,6 +1951,7 @@ export const jpN5 = [
         english: "Tenth day of the month",
         kanji: "",
         bangle: "মাসের দশম দিন, ১০ তারিখ",
+        audio: '253A2361035756'
       },
       {
         japanese: "じゅう よっか",
@@ -1917,6 +1959,7 @@ export const jpN5 = [
         english: "Fourteenth day of the month",
         kanji: "",
         bangle: "মাসের চতুর্দশ দিন, ১৪ তারিখ",
+        audio: '253A2361035789'
       },
       {
         japanese: "はつか",
@@ -1924,6 +1967,7 @@ export const jpN5 = [
         english: "Twentieth day of the month",
         kanji: "",
         bangle: "মাসের বিংশ দিন, ২০ তারিখ",
+        audio: '253A2361035801'
       },
 
       {
@@ -1932,6 +1976,7 @@ export const jpN5 = [
         english: "Twenty-fourth day of the month",
         kanji: "",
         bangle: "মাসের চতুর্বিংশ দিন, ২৪ তারিখ",
+        audio: '253A2361035810'
       },
       {
         japanese: "―にち",
@@ -1939,6 +1984,7 @@ export const jpN5 = [
         english: "―day of the month",
         kanji: "",
         bangle: "―তারিখ, ―দিন",
+        audio: '253A2361035849'
       },
       {
         japanese: "なんにち",
@@ -1946,6 +1992,7 @@ export const jpN5 = [
         english: "What day of the month",
         kanji: "",
         bangle: "কোন তারিখ, কোন দিন, কত তারিখ, কত দিন",
+        audio: '253A2361035828'
       },
       {
         japanese: "いつ",
@@ -1953,6 +2000,7 @@ export const jpN5 = [
         english: "When",
         kanji: "",
         bangle: "কখন",
+        audio: '253A2361035834'
       },
       {
         japanese: "たんじょうび",
@@ -1960,6 +2008,7 @@ export const jpN5 = [
         english: "Birthday",
         kanji: "",
         bangle: "জন্মদিন",
+        audio: '253A2361035816'
       },
       {
         japanese: "ふつう",
@@ -1967,6 +2016,7 @@ export const jpN5 = [
         english: "Local (train)",
         kanji: "",
         bangle: "লোকাল ট্রেন",
+        audio: '253A2361035843'
       },
       {
         japanese: "きゅうこう",
@@ -1974,6 +2024,7 @@ export const jpN5 = [
         english: "Rapid",
         kanji: "",
         bangle: "রাপিড ট্রেন",
+        audio: '253A2361035852'
       },
       {
         japanese: "とっきゅう",
@@ -1981,20 +2032,23 @@ export const jpN5 = [
         english: "Express",
         kanji: "",
         bangle: "এক্সপ্রেস ট্রেন",
+        audio: '253A2361035738'
       },
       {
         japanese: "つぎの",
-        pronounce: "তসুগি নো",
+        pronounce: "সুগি নো",
         english: "Next",
         kanji: "",
         bangle: "পরবর্তী",
+        audio: '253A2361035825'
       },
       {
         japanese: "どういたしまして",
-        pronounce: "দৌ ইতাশিমাশিতে",
+        pronounce: "দৌই তাশিমাশিতে",
         english: "You’re welcome, don’t mention it",
         kanji: "",
         bangle: "আপনাকে স্বাগতম",
+        audio: '253A2361035840'
       },
       {
         japanese: "ばんせん",
@@ -2002,6 +2056,7 @@ export const jpN5 = [
         english: "Platform",
         kanji: "",
         bangle: "প্ল্যাটফর্ম",
+        audio: '253A2361035831'
       },
       {
         japanese: "はかた",
@@ -2009,6 +2064,7 @@ export const jpN5 = [
         english: "Hakata (a place in Fukuoka)",
         kanji: "",
         bangle: "হাকাতা (ফুকুওকার একটি স্থান)",
+        audio: '253A2361035846'
       },
       {
         japanese: "ふしみ",
@@ -2016,6 +2072,7 @@ export const jpN5 = [
         english: "Fushimi (a place in Kyoto)",
         kanji: "",
         bangle: "ফুশিমি (কিয়োটোর একটি স্থান)",
+        audio: '253A2361035777'
       },
       {
         japanese: "こうしえん",
@@ -2023,6 +2080,7 @@ export const jpN5 = [
         english: "Koshien (a place in Hyogo)",
         kanji: "",
         bangle: "কোশিয়েন (হিয়োগোর একটি স্থান)",
+        audio: '253A2361035822'
       },
       {
         japanese: "おおさかじょう",
@@ -2030,6 +2088,7 @@ export const jpN5 = [
         english: "Osaka Castle (a place in Osaka)",
         kanji: "",
         bangle: "ওসাকা ক্যাসেল (ওসাকার একটি স্থান)",
+        audio: '253A2361035804'
       },
     ],
   },

@@ -2102,6 +2102,7 @@ export const jpN5 = [
         english: "to eat",
         kanji: "食べます",
         bangle: "খাওয়া",
+        audio: '253A2361060887'
       },
       {
         japanese: "のみます",
@@ -2109,6 +2110,7 @@ export const jpN5 = [
         english: "to drink",
         kanji: "飲みます",
         bangle: "পান করা",
+        audio: '253A2361060809'
       },
       {
         japanese: "すいます",
@@ -2116,6 +2118,7 @@ export const jpN5 = [
         english: "to smoke",
         kanji: "吸います",
         bangle: "ধূমপান করা",
+        audio: '253A2361060797'
       },
       {
         japanese: "みます",
@@ -2123,6 +2126,7 @@ export const jpN5 = [
         english: "to see / to watch",
         kanji: "見ます",
         bangle: "দেখা",
+        audio: '253A2361060803'
       },
       {
         japanese: "ききます",
@@ -2130,6 +2134,7 @@ export const jpN5 = [
         english: "to listen / to hear",
         kanji: "聞きます",
         bangle: "শোনা",
+        audio: '253A2361060824'
       },
       {
         japanese: "よみます",
@@ -2137,6 +2142,7 @@ export const jpN5 = [
         english: "to read",
         kanji: "読みます",
         bangle: "পড়া",
+        audio: '253A2361060785'
       },
       {
         japanese: "かきます",
@@ -2144,6 +2150,7 @@ export const jpN5 = [
         english: "to write",
         kanji: "書きます",
         bangle: "লেখা",
+        audio: '253A2361060788'
       },
       {
         japanese: "かいます",
@@ -2151,6 +2158,7 @@ export const jpN5 = [
         english: "to buy",
         kanji: "買います",
         bangle: "কেনা",
+        audio: '253A2361060818'
       },
 
       {
@@ -2159,6 +2167,7 @@ export const jpN5 = [
         english: "to take (a photo)",
         kanji: "撮ります",
         bangle: "ছবি তোলা",
+        audio: '253A2361060812'
       },
       {
         japanese: "します",
@@ -2166,6 +2175,7 @@ export const jpN5 = [
         english: "to do",
         kanji: "します",
         bangle: "করা",
+        audio: '253A2361060791'
       },
       {
         japanese: "あいます",
@@ -2173,6 +2183,7 @@ export const jpN5 = [
         english: "to meet (a friend)",
         kanji: "会います",
         bangle: "মিলিত হওয়া",
+        audio: '253A2361060794'
       },
       {
         japanese: "ごはん",
@@ -2180,6 +2191,7 @@ export const jpN5 = [
         english: "rice / meal",
         kanji: "ご飯",
         bangle: "ভাত / খাবার",
+        audio: '253A2361060815'
       },
       {
         japanese: "あさごはん",
@@ -2187,6 +2199,7 @@ export const jpN5 = [
         english: "breakfast",
         kanji: "朝ご飯",
         bangle: "সকালের খাবার",
+        audio: '253A2361060800'
       },
       {
         japanese: "ひるごはん",
@@ -2194,6 +2207,7 @@ export const jpN5 = [
         english: "lunch",
         kanji: "昼ご飯",
         bangle: "দুপুরের খাবার",
+        audio: '253A2361060806'
       },
       {
         japanese: "ばんごはん",
@@ -2201,6 +2215,7 @@ export const jpN5 = [
         english: "dinner",
         kanji: "晩ご飯",
         bangle: "রাতের খাবার",
+        audio: '253A2361060926'
       },
       {
         japanese: "パン",
@@ -2208,6 +2223,7 @@ export const jpN5 = [
         english: "bread",
         kanji: "パン",
         bangle: "পাউরুটি",
+        audio: '253A2361060833'
       },
       {
         japanese: "たまご",
@@ -2215,6 +2231,7 @@ export const jpN5 = [
         english: "egg",
         kanji: "卵",
         bangle: "ডিম",
+        audio: '253A2361060899'
       },
       {
         japanese: "にく",
@@ -2222,6 +2239,7 @@ export const jpN5 = [
         english: "meat",
         kanji: "肉",
         bangle: "মাংস",
+        audio: '253A2361060875'
       },
       {
         japanese: "さかな",
@@ -2229,6 +2247,7 @@ export const jpN5 = [
         english: "fish",
         kanji: "魚",
         bangle: "মাছ",
+        audio: '253A2361060902'
       },
       {
         japanese: "やさい",
@@ -2236,6 +2255,7 @@ export const jpN5 = [
         english: "vegetables",
         kanji: "野菜",
         bangle: "সবজি",
+        audio: '253A2361060821'
       },
       {
         japanese: "くだもの",
@@ -2243,6 +2263,7 @@ export const jpN5 = [
         english: "fruit",
         kanji: "果物",
         bangle: "ফল",
+        audio: '253A2361060842'
       },
       {
         japanese: "みず",
@@ -2250,6 +2271,7 @@ export const jpN5 = [
         english: "water",
         kanji: "水",
         bangle: "পানি",
+        audio: '253A2361060851'
       },
       {
         japanese: "おちゃ",
@@ -2257,6 +2279,7 @@ export const jpN5 = [
         english: "green tea",
         kanji: "お茶",
         bangle: "চা",
+        audio: '253A2361060884'
       },
       {
         japanese: "こうちゃ",
@@ -2264,6 +2287,7 @@ export const jpN5 = [
         english: "black tea",
         kanji: "紅茶",
         bangle: "লাল চা",
+        audio: '253A2361060917'
       },
       {
         japanese: "ぎゅうにゅう",
@@ -2271,6 +2295,7 @@ export const jpN5 = [
         english: "milk",
         kanji: "牛乳",
         bangle: "দুধ",
+        audio: '253A2361060839'
       },
       {
         japanese: "ジュース",
@@ -2278,6 +2303,7 @@ export const jpN5 = [
         english: "juice",
         kanji: "ジュース",
         bangle: "জুস",
+        audio: '253A2361060914'
       },
       {
         japanese: "ビール",
@@ -2285,6 +2311,7 @@ export const jpN5 = [
         english: "beer",
         kanji: "ビール",
         bangle: "বিয়ার",
+        audio: '253A2361060872'
       },
       {
         japanese: "[お]さけ",
@@ -2292,6 +2319,7 @@ export const jpN5 = [
         english: "alcohol / sake",
         kanji: "酒",
         bangle: "মদ",
+        audio: '253A2361060857'
       },
       {
         japanese: "ビデオ",
@@ -2299,6 +2327,7 @@ export const jpN5 = [
         english: "video",
         kanji: "ビデオ",
         bangle: "ভিডিও",
+        audio: '253A2361060938'
       },
       {
         japanese: "えいが",
@@ -2306,6 +2335,7 @@ export const jpN5 = [
         english: "movie",
         kanji: "映画",
         bangle: "সিনেমা",
+        audio: '253A2361060869'
       },
 
       {
@@ -2314,6 +2344,7 @@ export const jpN5 = [
         english: "letter",
         kanji: "手紙",
         bangle: "চিঠি",
+        audio: '253A2361060866'
       },
       {
         japanese: "レポート",
@@ -2321,6 +2352,7 @@ export const jpN5 = [
         english: "report",
         kanji: "レポート",
         bangle: "রিপোর্ট",
+        audio: '253A2361060827'
       },
       {
         japanese: "しゃしん",
@@ -2328,6 +2360,7 @@ export const jpN5 = [
         english: "photo",
         kanji: "写真",
         bangle: "ছবি",
+        audio: '253A2361060935'
       },
       {
         japanese: "みせ",
@@ -2335,6 +2368,7 @@ export const jpN5 = [
         english: "shop / store",
         kanji: "店",
         bangle: "দোকান",
+        audio: '253A2361060923'
       },
       {
         japanese: "レストラン",
@@ -2342,6 +2376,7 @@ export const jpN5 = [
         english: "restaurant",
         kanji: "レストラン",
         bangle: "রেস্টুরেন্ট",
+        audio: '253A2361060881'
       },
       {
         japanese: "にわ",
@@ -2349,6 +2384,7 @@ export const jpN5 = [
         english: "garden",
         kanji: "庭",
         bangle: "বাগান",
+        audio: '253A2361060920'
       },
       {
         japanese: "しゅくだい",
@@ -2356,6 +2392,7 @@ export const jpN5 = [
         english: "homework",
         kanji: "宿題",
         bangle: "বাড়ির কাজ",
+        audio: '253A2361060890'
       },
       {
         japanese: "テニス",
@@ -2363,6 +2400,7 @@ export const jpN5 = [
         english: "tennis",
         kanji: "テニス",
         bangle: "টেনিস",
+        audio: '253A2361060830'
       },
       {
         japanese: "サッカー",
@@ -2370,13 +2408,15 @@ export const jpN5 = [
         english: "football / soccer",
         kanji: "サッカー",
         bangle: "ফুটবল",
+        audio: '253A2361060893'
       },
       {
-        japanese: "はなみ",
-        pronounce: "হানামি",
+        japanese: "[ お ] はなみ",
+        pronounce: "[ ওহ ] হানামি",
         english: "flower viewing",
         kanji: "花見",
         bangle: "ফুল দেখা (চেরি ব্লসম দেখা)",
+        audio: '253A2361060863'
       },
       {
         japanese: "なに",
@@ -2384,6 +2424,7 @@ export const jpN5 = [
         english: "what",
         kanji: "何",
         bangle: "কি",
+        audio: '253A2361060845'
       },
       {
         japanese: "いっしょに",
@@ -2391,6 +2432,7 @@ export const jpN5 = [
         english: "together",
         kanji: "一緒に",
         bangle: "একসাথে",
+        audio: '253A2361060854'
       },
       {
         japanese: "ちょっと",
@@ -2398,6 +2440,7 @@ export const jpN5 = [
         english: "a little / a bit",
         kanji: "ちょっと",
         bangle: "একটু",
+        audio: '253A2361060908'
       },
       {
         japanese: "いつも",
@@ -2405,6 +2448,7 @@ export const jpN5 = [
         english: "always",
         kanji: "いつも",
         bangle: "সবসময়",
+        audio: '253A2361060848'
       },
       {
         japanese: "ときどき",
@@ -2412,6 +2456,7 @@ export const jpN5 = [
         english: "sometimes",
         kanji: "時々",
         bangle: "মাঝে মাঝে",
+        audio: '253A2361060905'
       },
       {
         japanese: "それから",
@@ -2419,6 +2464,7 @@ export const jpN5 = [
         english: "and then / after that",
         kanji: "それから",
         bangle: "তারপর",
+        audio: '253A2361060911'
       },
       {
         japanese: "ええ",
@@ -2426,6 +2472,7 @@ export const jpN5 = [
         english: "yes (informal)",
         kanji: "ええ",
         bangle: "হ্যাঁ",
+        audio: ''
       },
       {
         japanese: "いいですね",
@@ -2433,6 +2480,7 @@ export const jpN5 = [
         english: "that sounds good",
         kanji: "いいですね",
         bangle: "ভালো লাগছে",
+        audio: '253A2361060896'
       },
       {
         japanese: "わかりました",
@@ -2440,6 +2488,7 @@ export const jpN5 = [
         english: "I understand",
         kanji: "分かりました",
         bangle: "আমি বুঝেছি",
+        audio: '253A2361060929'
       },
       {
         japanese: "なんですか",
@@ -2447,6 +2496,7 @@ export const jpN5 = [
         english: "what is it?",
         kanji: "何ですか",
         bangle: "এটা কী?",
+        audio: '253A2361060878'
       },
       {
         japanese: "じゃ また",
@@ -2454,6 +2504,7 @@ export const jpN5 = [
         english: "see you (later)",
         kanji: "じゃまた",
         bangle: "আবার দেখা হবে",
+        audio: '253A2361060860'
       },
       {
         japanese: "メキシコ",
@@ -2461,6 +2512,7 @@ export const jpN5 = [
         english: "Mexico",
         kanji: "メキシコ",
         bangle: "মেক্সিকো",
+        audio: ''
       },
     ],
   },

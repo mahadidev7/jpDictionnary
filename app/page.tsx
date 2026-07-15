@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <div className="relative w-full h-screen flex flex-col justify-start items-center">
-      <div className="flex overflow-auto w-full p-2 gap-2 border-b-2 mb-4 py-9 md:py-4">
+      <div className="flex w-full p-2 gap-2 md:py-4">
         <select
           className="bg-[#D9D9D9] p-1 text-black rounded"
           onChange={(e) => {

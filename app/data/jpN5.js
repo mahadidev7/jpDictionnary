@@ -1152,7 +1152,7 @@ export const jpN5 = [
         english: "to sleep",
         kanji: "寝ます",
         bangle: "ঘুমানো",
-        audio: "3A2361014342",  
+        audio: "3A2361014342%3Fsecret_token%3Ds-kFiopLI6Waq",  
       },
       {
         japanese: "はたらきます",
@@ -1160,6 +1160,7 @@ export const jpN5 = [
         english: "to work",
         kanji: "働きます",
         bangle: "কাজ করা",
+        audio: "3A2361014348%3Fsecret_token%3Ds-p7k2gmXeYhb",
       },
       {
         japanese: "やすみます",
@@ -1167,6 +1168,7 @@ export const jpN5 = [
         english: "to rest / to take a break",
         kanji: "休みます",
         bangle: "বিশ্রাম নেওয়া",
+        audio: "3A2361014366%3Fsecret_token%3Ds-Fve6Fhcsssd"
       },
       {
         japanese: "べんきょうします",
@@ -1174,6 +1176,7 @@ export const jpN5 = [
         english: "to study",
         kanji: "勉強します",
         bangle: "পড়াশোনা করা",
+        audio: "3A2361014351%3Fsecret_token%3Ds-1Q4hfbbtYf5",
       },
       {
         japanese: "おわります",
@@ -1181,6 +1184,7 @@ export const jpN5 = [
         english: "to finish",
         kanji: "終わります",
         bangle: "শেষ করা",
+        audio: '3A2361014369%3Fsecret_token%3Ds-X5LVgjiSqMI'
       },
       {
         japanese: "デパート",
@@ -1188,6 +1192,7 @@ export const jpN5 = [
         english: "department store",
         kanji: "デパート",
         bangle: "ডিপার্টমেন্ট স্টোর",
+        audio: "3A2361014393%3Fsecret_token%3Ds-Kumhb4hGR9J"
       },
       {
         japanese: "ぎんこう",
@@ -1195,6 +1200,7 @@ export const jpN5 = [
         english: "bank",
         kanji: "銀行",
         bangle: "ব্যাংক",
+        audio: '3A2361014384%3Fsecret_token%3Ds-K4WEpMyQpe9'
       },
       {
         japanese: "ゆうびんきょく",
@@ -1202,6 +1208,7 @@ export const jpN5 = [
         english: "post office",
         kanji: "郵便局",
         bangle: "ডাকঘর",
+        audio: "3A2361014345%3Fsecret_token%3Ds-9VpDE2O4tVZ"
       },
       {
         japanese: "としょかん",
@@ -1209,6 +1216,7 @@ export const jpN5 = [
         english: "library",
         kanji: "図書館",
         bangle: "লাইব্রেরি",
+        audio: '3A2361014375%3Fsecret_token%3Ds-ZzSmaS3PAKB'
       },
       {
         japanese: "びじゅつかん",
@@ -1216,6 +1224,7 @@ export const jpN5 = [
         english: "art museum",
         kanji: "美術館",
         bangle: "শিল্প জাদুঘর",
+        audio: '3A2361014429%3Fsecret_token%3Ds-zmvP8KdBLY0'
       },
       {
         japanese: "いま",
@@ -1223,6 +1232,7 @@ export const jpN5 = [
         english: "now",
         kanji: "今",
         bangle: "এখন",
+        audio: '3A2361014378%3Fsecret_token%3Ds-5a1Phd25seF'
       },
       {
         japanese: "じ",
@@ -1237,6 +1247,7 @@ export const jpN5 = [
         english: "minute",
         kanji: "分",
         bangle: "মিনিট",
+        audio: '3A2361014387%3Fsecret_token%3Ds-haIFqtMDtJQ'
       },
       {
         japanese: "はん",
@@ -1244,6 +1255,7 @@ export const jpN5 = [
         english: "half (past)",
         kanji: "半",
         bangle: "আধা",
+        audio: '3A2361014507%3Fsecret_token%3Ds-JZcg6HgzlYy'
       },
       {
         japanese: "なんじ",
@@ -1251,6 +1263,7 @@ export const jpN5 = [
         english: "what time",
         kanji: "何時",
         bangle: "কয়টা বাজে",
+        audio: '3A2361014402%3Fsecret_token%3Ds-nyCUQUDhTBl'
       },
       {
         japanese: "なんぷん",
@@ -1258,6 +1271,7 @@ export const jpN5 = [
         english: "how many minutes",
         kanji: "何分",
         bangle: "কত মিনিট",
+        audio: '253A2361022541'
       },
       {
         japanese: "ごぜん",
@@ -1265,6 +1279,7 @@ export const jpN5 = [
         english: "AM / morning",
         kanji: "午前",
         bangle: "সকাল",
+        audio: '253A2361023150'
       },
       {
         japanese: "ごご",
@@ -1272,6 +1287,7 @@ export const jpN5 = [
         english: "PM / afternoon",
         kanji: "午後",
         bangle: "বিকাল",
+        audio: '253A2361025499'
       },
       {
         japanese: "あさ",
@@ -1279,6 +1295,7 @@ export const jpN5 = [
         english: "morning",
         kanji: "朝",
         bangle: "সকাল",
+        audio: '3A2361014495%3Fsecret_token%3Ds-fELN2wDGC79'
       },
       {
         japanese: "ひる",
@@ -1286,6 +1303,7 @@ export const jpN5 = [
         english: "noon / daytime",
         kanji: "昼",
         bangle: "দুপুর",
+        audio: '3A2361014480%3Fsecret_token%3Ds-EvgN8GbCzQQ'
       },
       {
         japanese: "ばん",
@@ -1293,6 +1311,7 @@ export const jpN5 = [
         english: "evening",
         kanji: "晩",
         bangle: "সন্ধ্যা",
+        audio: '3A2361014390%3Fsecret_token%3Ds-vAKsoEGTazn'
       },
       {
         japanese: "よる",
@@ -1300,6 +1319,7 @@ export const jpN5 = [
         english: "night",
         kanji: "夜",
         bangle: "রাত",
+        audio: '3A2361014354%3Fsecret_token%3Ds-Fad9Ntb2sRK'
       },
 
       {
@@ -1308,6 +1328,7 @@ export const jpN5 = [
         english: "day before yesterday",
         kanji: "一昨日",
         bangle: "পরশু",
+        audio: '3A2361014423%3Fsecret_token%3Ds-XzMw1LWjfWS'
       },
       {
         japanese: "きのう",
@@ -1315,6 +1336,7 @@ export const jpN5 = [
         english: "yesterday",
         kanji: "昨日",
         bangle: "গতকাল",
+        audio: '3A2361014489%3Fsecret_token%3Ds-Bllb34MxGeA'
       },
       {
         japanese: "きょう",
@@ -1322,6 +1344,7 @@ export const jpN5 = [
         english: "today",
         kanji: "今日",
         bangle: "আজ",
+        audio: '3A2361014477%3Fsecret_token%3Ds-Z2fz9atUqzN'
       },
       {
         japanese: "あした",
@@ -1329,6 +1352,7 @@ export const jpN5 = [
         english: "tomorrow",
         kanji: "明日",
         bangle: "আগামীকাল",
+        audio: '3A2361014372%3Fsecret_token%3Ds-X4DlY15J8bY'
       },
       {
         japanese: "あさって",
@@ -1336,6 +1360,7 @@ export const jpN5 = [
         english: "day after tomorrow",
         kanji: "明後日",
         bangle: "পরশু (আগামী)",
+        audio: '3A2361014492%3Fsecret_token%3Ds-BI1irTCxpx5'
       },
       {
         japanese: "けさ",
@@ -1343,6 +1368,7 @@ export const jpN5 = [
         english: "this morning",
         kanji: "今朝",
         bangle: "আজ সকাল",
+        audio: '3A2361014447%3Fsecret_token%3Ds-U2Ie5CuNJC1'
       },
       {
         japanese: "こんばん",
@@ -1350,6 +1376,7 @@ export const jpN5 = [
         english: "this evening / tonight",
         kanji: "今晩",
         bangle: "আজ সন্ধ্যা",
+        audio: '3A2361014405%3Fsecret_token%3Ds-HaaZzUgImEW'
       },
       {
         japanese: "やすみ",
@@ -1357,6 +1384,7 @@ export const jpN5 = [
         english: "rest / holiday",
         kanji: "休み",
         bangle: "ছুটি",
+        audio: '3A2361014381%3Fsecret_token%3Ds-q808dqvacgP'
       },
       {
         japanese: "ひるやすみ",
@@ -1364,6 +1392,7 @@ export const jpN5 = [
         english: "lunch break",
         kanji: "昼休み",
         bangle: "দুপুরের বিরতি",
+        audio: '3A2361014441%3Fsecret_token%3Ds-ghFtqNnnsOs'
       },
       {
         japanese: "まいあさ",
@@ -1371,6 +1400,7 @@ export const jpN5 = [
         english: "every morning",
         kanji: "毎朝",
         bangle: "প্রতিদিন সকাল",
+        audio: '3A2361014498%3Fsecret_token%3Ds-6m9TVC1jJpY'
       },
       {
         japanese: "まいばん",
@@ -1378,6 +1408,7 @@ export const jpN5 = [
         english: "every night",
         kanji: "毎晩",
         bangle: "প্রতিদিন রাত",
+        audio: '3A2361014444%3Fsecret_token%3Ds-EO04peUeWrT'
       },
       {
         japanese: "まいにち",
@@ -1385,6 +1416,7 @@ export const jpN5 = [
         english: "every day",
         kanji: "毎日",
         bangle: "প্রতিদিন",
+        audio: '3A2361014417%3Fsecret_token%3Ds-55OC9TprvKq'
       },
 
       {
@@ -1393,6 +1425,7 @@ export const jpN5 = [
         english: "Monday",
         kanji: "月曜日",
         bangle: "সোমবার",
+        audio: '3A2361014474%3Fsecret_token%3Ds-YuLZqDhgqGH'
       },
       {
         japanese: "かようび",
@@ -1400,6 +1433,7 @@ export const jpN5 = [
         english: "Tuesday",
         kanji: "火曜日",
         bangle: "মঙ্গলবার",
+        audio: '3A2361014396%3Fsecret_token%3Ds-rvvrfBQRzE3'
       },
       {
         japanese: "すいようび",
@@ -1407,6 +1441,7 @@ export const jpN5 = [
         english: "Wednesday",
         kanji: "水曜日",
         bangle: "বুধবার",
+        audio: '3A2361014438%3Fsecret_token%3Ds-KxRvn1Bv5eL'
       },
       {
         japanese: "もくようび",
@@ -1414,6 +1449,7 @@ export const jpN5 = [
         english: "Thursday",
         kanji: "木曜日",
         bangle: "বৃহস্পতিবার",
+        audio: '3A2361014420%3Fsecret_token%3Ds-cKjG5MEo9BO'
       },
       {
         japanese: "きんようび",
@@ -1421,6 +1457,7 @@ export const jpN5 = [
         english: "Friday",
         kanji: "金曜日",
         bangle: "শুক্রবার",
+        audio: '3A2361014414%3Fsecret_token%3Ds-2d0rXCUd5rl'
       },
       {
         japanese: "どようび",
@@ -1428,6 +1465,7 @@ export const jpN5 = [
         english: "Saturday",
         kanji: "土曜日",
         bangle: "শনিবার",
+        audio: '3A2361014408%3Fsecret_token%3Ds-XOfx3m9knOa'
       },
       {
         japanese: "なんようび",
@@ -1435,6 +1473,7 @@ export const jpN5 = [
         english: "what day of the week",
         kanji: "何曜日",
         bangle: "সপ্তাহের কোন দিন",
+        audio: '3A2361014411%3Fsecret_token%3Ds-2xW5UYFm0vW'
       },
       {
         japanese: "ばんごう",
@@ -1442,6 +1481,7 @@ export const jpN5 = [
         english: "number",
         kanji: "番号",
         bangle: "নম্বর",
+        audio: '3A2361014432%3Fsecret_token%3Ds-A3nWf0lA0IJ'
       },
       {
         japanese: "なんばん",
@@ -1449,6 +1489,7 @@ export const jpN5 = [
         english: "what number",
         kanji: "何番",
         bangle: "কোন নম্বর",
+        audio: '3A2361014450%3Fsecret_token%3Ds-NpbZMBb3Dyn'
       },
       {
         japanese: "から",
@@ -1456,6 +1497,7 @@ export const jpN5 = [
         english: "from",
         kanji: "から",
         bangle: "থেকে",
+        audio: '3A2361014504%3Fsecret_token%3Ds-U8NZqw32QZj'
       },
       {
         japanese: "まで",
@@ -1463,6 +1505,7 @@ export const jpN5 = [
         english: "until / to",
         kanji: "まで",
         bangle: "পর্যন্ত",
+        audio: '3A2361014501%3Fsecret_token%3Ds-kBDAfYE4wKz'
       },
       {
         japanese: "と",
@@ -1470,6 +1513,7 @@ export const jpN5 = [
         english: "and / with",
         kanji: "と",
         bangle: "এবং / সাথে",
+        audio: ''
       },
       {
         japanese: "そちら",
@@ -1477,6 +1521,7 @@ export const jpN5 = [
         english: "that way (polite)",
         kanji: "そちら",
         bangle: "ওই দিক",
+        audio: ''
       },
       {
         japanese: "たいへんですね",
@@ -1484,6 +1529,7 @@ export const jpN5 = [
         english: "that’s tough / difficult",
         kanji: "大変ですね",
         bangle: "খুব কষ্টকর",
+        audio: '3A2361014468%3Fsecret_token%3Ds-6QWSjaw8vCo'
       },
       {
         japanese: "えーと",
@@ -1491,6 +1537,7 @@ export const jpN5 = [
         english: "well... / um...",
         kanji: "えーと",
         bangle: "উম...",
+        audio: ''
       },
       {
         japanese: "おねがいします",
@@ -1498,6 +1545,7 @@ export const jpN5 = [
         english: "please / I request",
         kanji: "お願いします",
         bangle: "অনুগ্রহ করে",
+        audio: '3A2361014471%3Fsecret_token%3Ds-CscXqBPzlJj'
       },
       {
         japanese: "かしこまりました",
@@ -1505,6 +1553,7 @@ export const jpN5 = [
         english: "certainly / understood (very polite)",
         kanji: "かしこまりました",
         bangle: "বুঝেছি (ভদ্রভাবে)",
+        audio: '3A2361014435%3Fsecret_token%3Ds-fODjE8tbHlb'
       },
       {
         japanese: "おといあわせのばんごう",
@@ -1512,6 +1561,7 @@ export const jpN5 = [
         english: "inquiry number",
         kanji: "お問い合わせの番号",
         bangle: "জিজ্ঞাসার নম্বর",
+        audio: '3A2361014459%3Fsecret_token%3Ds-97qWHxouVq4'
       },
       {
         japanese: "どうもありがとうございました",
@@ -1519,6 +1569,7 @@ export const jpN5 = [
         english: "thank you very much",
         kanji: "どうもありがとうございました",
         bangle: "অনেক ধন্যবাদ",
+        audio: '3A2361014462%3Fsecret_token%3Ds-dbbDVn4s2d7'
       },
       {
         japanese: "ニューヨーク",
@@ -1526,6 +1577,7 @@ export const jpN5 = [
         english: "New York",
         kanji: "ニューヨーク",
         bangle: "নিউইয়র্ক",
+        audio: '3A2361014510%3Fsecret_token%3Ds-cb11AMYhmPZ'
       },
       {
         japanese: "ペキン",
@@ -1533,6 +1585,7 @@ export const jpN5 = [
         english: "Beijing",
         kanji: "北京",
         bangle: "বেইজিং",
+        audio: '3A2361014486%3Fsecret_token%3Ds-uLwnj4pd1GF'
       },
       {
         japanese: "ロンドン",
@@ -1540,6 +1593,7 @@ export const jpN5 = [
         english: "London",
         kanji: "ロンドン",
         bangle: "লন্ডন",
+        audio: '3A2361014465%3Fsecret_token%3Ds-WIBUMYa84Dz'
       },
       {
         japanese: "バンコク",
@@ -1547,6 +1601,7 @@ export const jpN5 = [
         english: "Bangkok",
         kanji: "バンコク",
         bangle: "ব্যাংকক",
+        audio: '3A2361014456%3Fsecret_token%3Ds-o5hOyN7gTKA'
       },
       {
         japanese: "ロサンゼルス",
@@ -1554,6 +1609,7 @@ export const jpN5 = [
         english: "Los Angeles",
         kanji: "ロサンゼルス",
         bangle: "লস অ্যাঞ্জেলেস",
+        audio: '3A2361014483%3Fsecret_token%3Ds-OHyIU5waCYe'
       },
     ],
   },

@@ -21,6 +21,8 @@ export default function Home() {
   const [iscloseDrower, setIsCloseDrower] = useState(false);
   const [showText, setShowText] = useState<keyof VocabItem>("japanese");
   const [isAudio, setIsAudio] = useState(false);
+  const [text, setText] = useState("");
+  const [textError, setTextError] = useState("");
 
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
@@ -60,9 +62,23 @@ export default function Home() {
     setSliderActiveVocab(0);
   }
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+  };
+
+  const handleCheck = () => {
+    if (text === lessonVocab[sliderActiveVocab]?.japanese) {
+      setTextError("success");
+      return;
+    } else {
+      setTextError("error");
+      return;
+    }
+  };
+
   return (
     <div className="relative w-full h-screen flex flex-col justify-start items-center">
-      <div className="flex w-full p-2 gap-2 md:py-4">
+      <div className="flex w-full p-2 gap-2 md:py-4 overflow-auto">
         <select
           className="bg-[#D9D9D9] p-1 text-black rounded"
           onChange={(e) => {
@@ -138,24 +154,32 @@ export default function Home() {
       {isSlider ? (
         <>
           <div className="flex flex-col justify-center items-center w-full border">
-            <p className="text-[#666] text-left md:w-1/2 w-full px-2">{showText}</p>
-            <div className="border border-gray-300 rounded-xl py-22 p-2 md:w-1/2 w-full bg-[#096992]">
+            <p className="text-[#666] text-left md:w-1/2 w-full px-2">
+              {showText}
+            </p>
+            <div className="border border-gray-300 rounded-xl py-22 md:px-2 p-4 md:w-1/2 w-full bg-[#096992]">
               <div className="flex flex-col justify-end items-center">
                 {isAudio ? (
                   lessonVocab[sliderActiveVocab]?.audio ? (
                     <div className="flex flex-col justify-center items-center gap-2">
                       <iframe
-                        width="300"
+                        width="auto"
                         height="100"
                         allow="autoplay; encrypted-media"
                         src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
                       ></iframe>
                       <input
-                        className="bg-[#D9D9D9] p-2 text-black rounded px-4 w-full mt-2 outline-none"
+                        className={` p-2 text-black rounded px-4 w-full mt-2 outline-none ${textError === 'error' ? 'bg-[#f0aaaa]' : 'bg-[#D9D9D9]' }`}
                         type="text"
+                        value={text}
                         placeholder="Enter listening word"
+                        onChange={handleChange}
+                        onFocus={ () => setTextError("success")}
                       />
-                      <button className="bg-[#D9D9D9] hover:opacity-80 text-black py-2 px-4 rounded w-full">
+                      <button
+                        onClick={handleCheck}
+                        className="bg-[#D9D9D9] hover:opacity-80 text-black py-2 px-4 rounded w-full"
+                      >
                         Submit
                       </button>
                     </div>
@@ -196,7 +220,10 @@ export default function Home() {
             </button>
             <button
               className="bg-amber-700 p-2 rounded"
-              onClick={() => closeDrowerHandler()}  >Show Details</button>
+              onClick={() => closeDrowerHandler()}
+            >
+              Show Details
+            </button>
           </div>
         </>
       ) : (
@@ -293,7 +320,7 @@ export default function Home() {
                 listening test: {lessonVocab[sliderActiveVocab]?.audio || "---"}
               </p>
               <iframe
-                width="300"
+                width="auto"
                 height="100"
                 allow="autoplay; encrypted-media"
                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}

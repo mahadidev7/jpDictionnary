@@ -1144,7 +1144,7 @@ export const jpN5 = [
         english: "to wake up",
         kanji: "起きます",
         bangle: "ঘুম থেকে ওঠা",
-        audio: "3A2361014357",
+        audio: "3A2361014357%3Fsecret_token%3Ds-U1gadgLe3tk",
       },
       {
         japanese: "ねます",
@@ -1152,6 +1152,7 @@ export const jpN5 = [
         english: "to sleep",
         kanji: "寝ます",
         bangle: "ঘুমানো",
+        audio: "3A2361014342",  
       },
       {
         japanese: "はたらきます",

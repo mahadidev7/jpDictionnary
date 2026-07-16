@@ -156,9 +156,17 @@ export default function Home() {
       {isSlider && (
         <div className="w-full my-24">
           <div className="flex flex-col justify-center items-center w-full border">
-            <p className="text-[#666] text-left md:w-1/2 w-full px-2">
+            <div className="flex justify-between items-center md:w-1/2 w-full px-2">
+              <p className="text-[#666] text-left">
               {showText}
             </p>
+            <button
+              className="text-[#666] cursor-pointer"
+              onClick={() => closeDrowerHandler()}
+            >
+              Show Details
+            </button>
+            </div>
             <div className="border border-gray-300 rounded-xl py-22 md:px-2 p-4 md:w-1/2 w-full bg-[#096992]">
               <div className="flex flex-col justify-end items-center">
                 {isAudio ? (
@@ -220,12 +228,12 @@ export default function Home() {
             >
               Next
             </button>
-            <button
+            {/* <button
               className="bg-amber-700 p-2 rounded"
               onClick={() => closeDrowerHandler()}
             >
               Show Details
-            </button>
+            </button> */}
           </div>
         </div>
       )}
@@ -330,7 +338,7 @@ export default function Home() {
                 close
               </button>
               <p
-                className="text-[30px] font-bold text-[#000000] border-b-2 border-gray-200"
+                className="text-[18px] text-[#000000] border-b-2 border-gray-200"
                 onClick={() => showTextHandler("japanese")}
               >
                japanese:  {lessonVocab[sliderActiveVocab]?.japanese}
@@ -360,7 +368,7 @@ export default function Home() {
               Kanji:   {lessonVocab[sliderActiveVocab]?.kanji || "---"}
               </p>
               <p
-                className="text-[25px] text-[#000000] border-b border-gray-200"
+                className="text-[16px] text-[#000000] border-b border-gray-200"
                 onClick={() => audioHandler("audio")}
               >
                 listening ID: {lessonVocab[sliderActiveVocab]?.audio || "---"}
@@ -371,6 +379,12 @@ export default function Home() {
                 allow="autoplay; encrypted-media"
                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
               ></iframe>
+              <button
+                className="mt-8 text-black cursor-pointer border p-2 rounded"
+                onClick={() => closeDrowerHandler()}
+              >
+                close
+              </button>
             </div>
           </div>
         </div>

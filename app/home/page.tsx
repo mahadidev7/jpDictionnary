@@ -150,7 +150,7 @@ export default function Home() {
           shuffle
         </button>
       </div>
-      <div className="md:grid grid-cols-5 gap-2 my-18 min-h-150 w-full p-2">
+      <div className="md:grid grid-cols-5 gap-2 my-18 min-h-150 w-full">
         <div className="col-span-3  w-full flex flex-col justify-center items-center">
           <div className="md:w-2/3 w-full">
             <div className=" w-full ">
@@ -167,12 +167,12 @@ export default function Home() {
                 <div className="flex flex-col justify-end items-center">
                   {isAudio ? (
                     lessonVocab[sliderActiveVocab]?.audio ? (
-                      <div className="flex flex-col justify-center items-center gap-2">
+                      <div className="overflow-hidden flex flex-col gap-2">
                         <iframe
                           width="auto"
                           height="100"
                           allow="autoplay; encrypted-media"
-                          src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
+                          src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
                         ></iframe>
                         <input
                           className={` p-2 text-black rounded px-4 w-full mt-2 outline-none ${textError === "error" ? "bg-[#f0aaaa]" : textError === "success" ? "bg-[#9ffadf]" : "bg-[#D9D9D9]"} `}
@@ -234,7 +234,7 @@ export default function Home() {
                 className="bg-amber-700 p-2 rounded mb-8"
                 onClick={() => ToggleHandler()}
               >
-                {Toggle ? "close" : 'open'}
+                {Toggle ? "close" : "open"}
               </button>
               {Toggle && (
                 <div className="flex flex-col gap-3">

@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { jpN5 } from "./data/jpN5";
-import Image from "next/image";
+import { jpN5 } from "../data/jpN5";
 
 type VocabItem = {
   japanese: string;
@@ -24,6 +23,7 @@ export default function Home() {
   const [isAudio, setIsAudio] = useState(false);
   const [text, setText] = useState("");
   const [textError, setTextError] = useState("");
+  const [Toggle, setToggle] = useState(false);
 
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
@@ -62,6 +62,10 @@ export default function Home() {
     setLessonVocab(shuffled);
     setSliderActiveVocab(0);
   }
+
+  const ToggleHandler = () => {
+    setToggle(!Toggle);
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
@@ -105,12 +109,6 @@ export default function Home() {
         </select>
         <button
           className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
-          onClick={() => setIsSlider(false)}
-        >
-          All
-        </button>
-        <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
           onClick={() => setIsSlider(true)}
         >
           slider
@@ -152,91 +150,151 @@ export default function Home() {
           shuffle
         </button>
       </div>
-
-      {isSlider && (
-        <div className="w-full my-24">
-          <div className="flex flex-col justify-center items-center w-full border">
-            <div className="flex justify-between items-center md:w-1/2 w-full px-2">
-              <p className="text-[#666] text-left">
-              {showText}
-            </p>
-            <button
-              className="text-[#666] cursor-pointer"
-              onClick={() => closeDrowerHandler()}
-            >
-              Show Details
-            </button>
-            </div>
-            <div className="border border-gray-300 rounded-xl py-22 md:px-2 p-4 md:w-1/2 w-full bg-[#096992]">
-              <div className="flex flex-col justify-end items-center">
-                {isAudio ? (
-                  lessonVocab[sliderActiveVocab]?.audio ? (
-                    <div className="flex flex-col justify-center items-center gap-2">
-                      <iframe
-                        width="auto"
-                        height="100"
-                        allow="autoplay; encrypted-media"
-                        src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
-                      ></iframe>
-                      <input
-                        className={` p-2 text-black rounded px-4 w-full mt-2 outline-none ${textError === "error" ? "bg-[#f0aaaa]" : textError === "success" ? 'bg-[#9ffadf]' : 'bg-[#D9D9D9]'} `}
-                        type="text"
-                        value={text}
-                        placeholder="Enter listening word"
-                        onChange={handleChange}
-                        onFocus={() => setTextError("54")}
-                      />
-                      <button
-                        onClick={handleCheck}
-                        className="bg-[#D9D9D9] hover:opacity-80 text-black py-2 px-4 rounded w-full"
-                      >
-                        Submit
-                      </button>
-                    </div>
+      <div className="md:grid grid-cols-5 gap-2 my-18 min-h-150 w-full p-2">
+        <div className="col-span-3  w-full flex flex-col justify-center items-center">
+          <div className="md:w-2/3 w-full">
+            <div className=" w-full ">
+              <div className="flex justify-between items-center w-full px-2">
+                <p className="text-[#666] text-left">{showText}</p>
+                <button
+                  className="text-[#666] cursor-pointer"
+                  onClick={() => closeDrowerHandler()}
+                >
+                  Show Details
+                </button>
+              </div>
+              <div className="border border-gray-300 rounded-xl py-22 md:px-2 p-4 w-full bg-[#096992]">
+                <div className="flex flex-col justify-end items-center">
+                  {isAudio ? (
+                    lessonVocab[sliderActiveVocab]?.audio ? (
+                      <div className="flex flex-col justify-center items-center gap-2">
+                        <iframe
+                          width="auto"
+                          height="100"
+                          allow="autoplay; encrypted-media"
+                          src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
+                        ></iframe>
+                        <input
+                          className={` p-2 text-black rounded px-4 w-full mt-2 outline-none ${textError === "error" ? "bg-[#f0aaaa]" : textError === "success" ? "bg-[#9ffadf]" : "bg-[#D9D9D9]"} `}
+                          type="text"
+                          value={text}
+                          placeholder="Enter listening word"
+                          onChange={handleChange}
+                          onFocus={() => setTextError("54")}
+                        />
+                        <button
+                          onClick={handleCheck}
+                          className="bg-[#D9D9D9] hover:opacity-80 text-black py-2 px-4 rounded w-full"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    ) : (
+                      <p className="text-[16px]  text-red-300">
+                        Audio not available
+                      </p>
+                    )
                   ) : (
-                    <p className="text-[16px]  text-red-300">
-                      Audio not available
+                    <p className="text-[30px] font-bold text-white">
+                      {lessonVocab[sliderActiveVocab]?.[showText]}
                     </p>
-                  )
-                ) : (
-                  <p className="text-[30px] font-bold text-white">
-                    {lessonVocab[sliderActiveVocab]?.[showText]}
-                  </p>
-                )}
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex flex-wrap justify-center items-center w-full p-2 mb-9 gap-3">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() =>
-                setSliderActiveVocab((prev) => Math.max(0, prev - 1))
-              }
-            >
-              Previous
-            </button>
-            <p className="text-center text-[16px] text-[#000000]">
-              {sliderActiveVocab + 1} / {lessonVocab.length}
-            </p>
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() =>
-                setSliderActiveVocab((prev) =>
-                  Math.min(lessonVocab.length - 1, prev + 1),
-                )
-              }
-            >
-              Next
-            </button>
-            {/* <button
-              className="bg-amber-700 p-2 rounded"
-              onClick={() => closeDrowerHandler()}
-            >
-              Show Details
-            </button> */}
+            <div className="flex flex-wrap justify-center items-center w-full p-2 mb-9 gap-3">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() =>
+                  setSliderActiveVocab((prev) => Math.max(0, prev - 1))
+                }
+              >
+                Previous
+              </button>
+              <p className="text-center text-[16px] text-[#000000]">
+                {sliderActiveVocab + 1} / {lessonVocab.length}
+              </p>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() =>
+                  setSliderActiveVocab((prev) =>
+                    Math.min(lessonVocab.length - 1, prev + 1),
+                  )
+                }
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
-      )}
+        <div className="w-full col-span-2">
+          <div className=" p-4 bg-[#D9D9D9] w-full rounded-lg">
+            <div className="border border-gray-300 rounded-xl p-4 w-full">
+              <button
+                className="bg-amber-700 p-2 rounded mb-8"
+                onClick={() => ToggleHandler()}
+              >
+                {Toggle ? "close" : 'open'}
+              </button>
+              {Toggle && (
+                <div className="flex flex-col gap-3">
+                  <p
+                    className="text-[18px] text-[#000000] border-b-2 border-gray-200"
+                    onClick={() => showTextHandler("japanese")}
+                  >
+                    japanese: {lessonVocab[sliderActiveVocab]?.japanese}
+                  </p>
+                  <p
+                    className="text-[16px] text-[#000000] border-b border-gray-200"
+                    onClick={() => showTextHandler("pronounce")}
+                  >
+                    Bangla Pronounce:{" "}
+                    {lessonVocab[sliderActiveVocab]?.pronounce}
+                  </p>
+                  <p
+                    className="text-lg text-[#000000] border-b border-gray-200"
+                    onClick={() => showTextHandler("english")}
+                  >
+                    English Pronounce :{" "}
+                    {lessonVocab[sliderActiveVocab]?.english || "---"}
+                  </p>
+                  <p
+                    className="text-[14px] text-[#000000] border-b border-gray-200"
+                    onClick={() => showTextHandler("bangle")}
+                  >
+                    Bangla : {lessonVocab[sliderActiveVocab]?.bangle || "---"}
+                  </p>
+                  <p
+                    className="text-[25px] text-[#000000] border-b border-gray-200"
+                    onClick={() => showTextHandler("kanji")}
+                  >
+                    Kanji: {lessonVocab[sliderActiveVocab]?.kanji || "---"}
+                  </p>
+                  <p
+                    className="text-[16px] text-[#000000] border-b border-gray-200"
+                    onClick={() => audioHandler("audio")}
+                  >
+                    listening ID:{" "}
+                    {lessonVocab[sliderActiveVocab]?.audio || "---"}
+                  </p>
+                  <iframe
+                    width="auto"
+                    height="100"
+                    allow="autoplay; encrypted-media"
+                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
+                  ></iframe>
+                  <button
+                    className="mt-8 text-black cursor-pointer border p-2 rounded"
+                    onClick={() => closeDrowerHandler()}
+                  >
+                    close
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* footer  */}
       <div className="bg-[#034a53] w-full overflow-hidden">
@@ -325,70 +383,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* drower  */}
-      {iscloseDrower && (
-        <div className="absolute top-0 right-0 p-4 bg-[#D9D9D9] md:w-1/3 w-full h-full">
-          <div className="border border-gray-300 rounded-xl p-4 w-full">
-            <div className="flex flex-col gap-3">
-              <button
-                className="bg-amber-700 p-2 rounded mb-8"
-                onClick={() => closeDrowerHandler()}
-              >
-                close
-              </button>
-              <p
-                className="text-[18px] text-[#000000] border-b-2 border-gray-200"
-                onClick={() => showTextHandler("japanese")}
-              >
-               japanese:  {lessonVocab[sliderActiveVocab]?.japanese}
-              </p>
-              <p
-                className="text-[16px] text-[#000000] border-b border-gray-200"
-                onClick={() => showTextHandler("pronounce")}
-              >
-                Bangla Pronounce: {lessonVocab[sliderActiveVocab]?.pronounce} 
-              </p>
-              <p
-                className="text-lg text-[#000000] border-b border-gray-200"
-                onClick={() => showTextHandler("english")}
-              >
-                English Pronounce : {lessonVocab[sliderActiveVocab]?.english || "---"}
-              </p>
-              <p
-                className="text-[14px] text-[#000000] border-b border-gray-200"
-                onClick={() => showTextHandler("bangle")}
-              >
-               Bangla :  {lessonVocab[sliderActiveVocab]?.bangle || "---"}
-              </p>
-              <p
-                className="text-[25px] text-[#000000] border-b border-gray-200"
-                onClick={() => showTextHandler("kanji")}
-              >
-              Kanji:   {lessonVocab[sliderActiveVocab]?.kanji || "---"}
-              </p>
-              <p
-                className="text-[16px] text-[#000000] border-b border-gray-200"
-                onClick={() => audioHandler("audio")}
-              >
-                listening ID: {lessonVocab[sliderActiveVocab]?.audio || "---"}
-              </p>
-              <iframe
-                width="auto"
-                height="100"
-                allow="autoplay; encrypted-media"
-                src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%${lessonVocab[sliderActiveVocab]?.audio}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false`}
-              ></iframe>
-              <button
-                className="mt-8 text-black cursor-pointer border p-2 rounded"
-                onClick={() => closeDrowerHandler()}
-              >
-                close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

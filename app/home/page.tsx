@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { jpN5 } from "../data/jpN5";
 
 type VocabItem = {
@@ -14,7 +15,7 @@ type VocabItem = {
 
 export default function Home() {
   const [lessonVocab, setLessonVocab] = useState<VocabItem[]>(
-    jpN5[0]?.lessonVocabList,
+    jpN5[0]?.lessonVocabList ?? [],
   );
   const [sliderActiveVocab, setSliderActiveVocab] = useState(0);
   const [isSlider, setIsSlider] = useState(true);
@@ -28,6 +29,9 @@ export default function Home() {
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
     setSliderActiveVocab(0);
+    console.log("====handleClick================================");
+    console.log(data);
+    console.log("====================================");
   };
 
   const handelPOPUPFun = (url: string) => {
@@ -79,6 +83,11 @@ export default function Home() {
       setTextError("error");
       return;
     }
+  };
+
+  const allVocabolaryVocabHandler = () => {
+    const data = jpN5?.map((word) => word?.lessonVocabList);
+    setLessonVocab(data.flat());
   };
 
   return (
@@ -148,6 +157,12 @@ export default function Home() {
           onClick={() => shuffle()}
         >
           shuffle
+        </button>
+        <button
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          onClick={() => allVocabolaryVocabHandler()}
+        >
+          All Vocab
         </button>
       </div>
       <div className="md:grid grid-cols-5 gap-2 my-18 min-h-150 w-full">

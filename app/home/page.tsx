@@ -88,9 +88,9 @@ export default function Home() {
     setLessonVocab(data.flat());
   };
   const allBookMarkItem = () => {
-    const storage = localStorage.getItem("basket");
+    const storage = window.localStorage.getItem("basket");
     if (!storage) {
-      localStorage.setItem("basket", JSON.stringify([]));
+      window.localStorage.setItem("basket", JSON.stringify([]));
       return;
     }else {
       const parsedStorage = JSON.parse(storage);
@@ -99,9 +99,9 @@ export default function Home() {
   };
    
   const BookMarkHandler = (lessonVocab: VocabItem) => {
-    const storage = localStorage.getItem("basket");
+    const storage = window.localStorage.getItem("basket");
     if (!storage) {
-      localStorage.setItem("basket", JSON.stringify([]));
+      window.localStorage.setItem("basket", JSON.stringify([]));
       return;
     }else {
       const parsedStorage = JSON.parse(storage);
@@ -109,18 +109,18 @@ export default function Home() {
         (item: VocabItem) => item.japanese === lessonVocab.japanese,
       );
       if (!isAlreadyBookmarked) {
-        localStorage.setItem("basket", JSON.stringify([...parsedStorage, lessonVocab]));
+        window.localStorage.setItem("basket", JSON.stringify([...parsedStorage, lessonVocab]));
       }else {
         parsedStorage.splice(parsedStorage.findIndex((item: VocabItem) => item.japanese === lessonVocab.japanese), 1);  
-        localStorage.setItem("basket", JSON.stringify(parsedStorage));
+        window.localStorage.setItem("basket", JSON.stringify(parsedStorage));
       }
     }
   };
 
   useEffect(() => {
-    const storage = localStorage.getItem("basket");
+    const storage = window.localStorage.getItem("basket");
     if (!storage) {
-      localStorage.setItem("basket", JSON.stringify([]));
+      window.localStorage.setItem("basket", JSON.stringify([]));
       return;
     }else {
       // const parsedStorage = JSON.parse(storage); 
@@ -207,7 +207,7 @@ export default function Home() {
           className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() => allBookMarkItem()}
         >
-          Bookmark:{JSON.parse(localStorage.getItem("basket") || "[]").length}
+          Bookmark
         </button>
       </div>
       <div className="md:grid grid-cols-5 gap-2 my-18 min-h-150 w-full">

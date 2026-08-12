@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { jpN5 } from "../data/jpN5";
 
 type VocabItem = {
@@ -29,9 +29,6 @@ export default function Home() {
   const handleClick = (data: VocabItem[]) => {
     setLessonVocab(data);
     setSliderActiveVocab(0);
-    console.log("====handleClick================================");
-    console.log(data);
-    console.log("====================================");
   };
 
   const handelPOPUPFun = (url: string) => {
@@ -40,6 +37,7 @@ export default function Home() {
   const closeDrowerHandler = () => {
     setIsCloseDrower(!iscloseDrower);
   };
+ 
 
   const audioHandler = (audioData: keyof VocabItem) => {
     setShowText(audioData);
@@ -89,6 +87,47 @@ export default function Home() {
     const data = jpN5?.map((word) => word?.lessonVocabList);
     setLessonVocab(data.flat());
   };
+  const allBookMarkItem = () => {
+    const storage = localStorage.getItem("basket");
+    if (!storage) {
+      localStorage.setItem("basket", JSON.stringify([]));
+      return;
+    }else {
+      const parsedStorage = JSON.parse(storage);
+      setLessonVocab(parsedStorage);
+    }
+  };
+   
+  const BookMarkHandler = (lessonVocab: VocabItem) => {
+    const storage = localStorage.getItem("basket");
+    if (!storage) {
+      localStorage.setItem("basket", JSON.stringify([]));
+      return;
+    }else {
+      const parsedStorage = JSON.parse(storage);
+      const isAlreadyBookmarked = parsedStorage.some(
+        (item: VocabItem) => item.japanese === lessonVocab.japanese,
+      );
+      if (!isAlreadyBookmarked) {
+        localStorage.setItem("basket", JSON.stringify([...parsedStorage, lessonVocab]));
+      }else {
+        parsedStorage.splice(parsedStorage.findIndex((item: VocabItem) => item.japanese === lessonVocab.japanese), 1);  
+        localStorage.setItem("basket", JSON.stringify(parsedStorage));
+      }
+    }
+  };
+
+  useEffect(() => {
+    const storage = localStorage.getItem("basket");
+    if (!storage) {
+      localStorage.setItem("basket", JSON.stringify([]));
+      return;
+    }else {
+      // const parsedStorage = JSON.parse(storage); 
+      return;
+    }
+
+  }, []);
 
   return (
     <div className="relative w-full h-full flex flex-col justify-start items-center">
@@ -117,13 +156,13 @@ export default function Home() {
           ))}
         </select>
         <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() => setIsSlider(true)}
         >
           slider
         </button>
         <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() =>
             handelPOPUPFun(
               `https://www.japandict.com/?s=${lessonVocab[sliderActiveVocab]?.japanese}&lang=eng`,
@@ -133,7 +172,7 @@ export default function Home() {
           japandict
         </button>
         <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() =>
             handelPOPUPFun(
               `https://takoboto.jp/?q=${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
@@ -143,7 +182,7 @@ export default function Home() {
           takoboto
         </button>
         <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() =>
             handelPOPUPFun(
               `https://jisho.org/search/${encodeURIComponent(lessonVocab[sliderActiveVocab]?.japanese)}`,
@@ -153,16 +192,22 @@ export default function Home() {
           jisho
         </button>
         <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() => shuffle()}
         >
           shuffle
         </button>
         <button
-          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4"
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
           onClick={() => allVocabolaryVocabHandler()}
         >
-          All Vocab
+          AllVocab
+        </button>
+        <button
+          className="bg-[#D9D9D9] p-2 text-[#555] rounded-[10px] px-4 text-[14px]"
+          onClick={() => allBookMarkItem()}
+        >
+          Bookmark:{JSON.parse(localStorage.getItem("basket") || "[]").length}
         </button>
       </div>
       <div className="md:grid grid-cols-5 gap-2 my-18 min-h-150 w-full">
@@ -173,9 +218,9 @@ export default function Home() {
                 <p className="text-[#666] text-left">{showText}</p>
                 <button
                   className="text-[#666] cursor-pointer"
-                  onClick={() => closeDrowerHandler()}
+                  onClick={() => BookMarkHandler(lessonVocab[sliderActiveVocab])}
                 >
-                  Show Details
+                  Book mark
                 </button>
               </div>
               <div className="border border-gray-300 rounded-xl py-22 md:px-2 p-4 w-full bg-[#096992]">
@@ -219,7 +264,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap justify-center items-center w-full p-2 mb-9 gap-3">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-[#0e92ca] hover:bg-[#086086] text-white py-2 px-4 rounded-full"
                 onClick={() =>
                   setSliderActiveVocab((prev) => Math.max(0, prev - 1))
                 }
@@ -230,7 +275,7 @@ export default function Home() {
                 {sliderActiveVocab + 1} / {lessonVocab.length}
               </p>
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-[#0e92ca] hover:bg-[#086086] text-white py-2 px-4 rounded-full"
                 onClick={() =>
                   setSliderActiveVocab((prev) =>
                     Math.min(lessonVocab.length - 1, prev + 1),
@@ -263,14 +308,14 @@ export default function Home() {
                     className="text-[16px] text-[#000000] border-b border-gray-200"
                     onClick={() => showTextHandler("pronounce")}
                   >
-                    Bangla Pronounce:{" "}
+                    Pronounce:{" "}
                     {lessonVocab[sliderActiveVocab]?.pronounce}
                   </p>
                   <p
                     className="text-lg text-[#000000] border-b border-gray-200"
                     onClick={() => showTextHandler("english")}
                   >
-                    English Pronounce :{" "}
+                    English :{" "}
                     {lessonVocab[sliderActiveVocab]?.english || "---"}
                   </p>
                   <p
